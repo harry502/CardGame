@@ -1,0 +1,36 @@
+//运行项目的逻辑文件枚举【LogicMgr.js的相对路径】
+var logicPathEnum = {
+	default:'./BaseLogic',
+	jumpFrog:'../../../JumpFrogScript',//跳向傻白甜
+	hexClear:'../../../HexScript',//六角拼
+	crane:'../../../CraneScript',//娃娃机
+	jumpFridge:'../../../JumpFridgeScript',//跳冰箱
+	clearBrick:"../../../clearBrickScript",//消砖块
+	dinner:"",//年夜饭
+	classroom:"../../../ClassRoomScript",//教室大战
+	hitGopher:"../../../HitGopherScript",//打地鼠
+	elude:"../../../EludeScript",//极限躲避
+	jump:"",//跳一跳
+	superRun:"",//超级虐跑
+}
+
+//运行项目的玩家对象文件枚举【PlayerMgr.js的相对路径】
+var playerPathEnum = {
+	default:'./BasePlayer',
+	jumpFrog:'../../../JumpFrog',//跳向傻白甜
+	hexClear:'../../../HexPlayer',//六角拼
+	crane:'../../../CranePlayer',//娃娃机
+	jumpFridge:'../../../JumpFridgePlayer',//跳冰箱
+	clearBrick:"../../../clearBrickPlayer",//消砖块
+	dinner:"",//年夜饭
+	classroom:"../../../ClassRoomPlayer",//教室大战
+	hitGopher:"../../../HitGopherPlayer",//打地鼠
+	elude:"../../../EludePlayer",//极限躲避
+	jump:"",//跳一跳
+	superRun:"",//超级虐跑
+};
+
+module.exports = {
+	etcLogicPath:logicPathEnum.default,
+	etcPlayerPath:playerPathEnum.default,
+}
