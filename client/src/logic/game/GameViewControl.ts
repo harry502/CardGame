@@ -1,33 +1,41 @@
 
-class GameViewControl extends core.ViewController {
-	private gameView:GameView;
-	private goods:Object;
+enum ViewList
+{
+	login=0,
+	Main=1,
+	battle=2
+}
 
-	public constructor() {
-		super();
-	}
+class GameViewControl{
+	private NowView:ViewList = ViewList.login;
 
-	public destroy() {
-		if(this.gameView)
-		{
-			this.gameView.parent.removeChild(this.gameView);
-			this.gameView.destroy();
-			this.gameView = null;
-		}
-		super.destroy();
-	}
-
-	public open(): void {
-
-		if(this.gameView == null){
-			this.gameView = new GameView();
-		}
-		this.getParent().addChild(this.gameView);
-		this.gameView.open();
-
+	private static inst: GameViewControl;
+    public static getInst() {
+        if (GameViewControl.inst == null) {
+            GameViewControl.inst = new GameViewControl();
+        }
+        return GameViewControl.inst;
     }
 
-	public update(): void {
+	public constructor() {
+	}
+
+	public LoadView(viewnum:ViewList)
+	{
+		switch(viewnum)
+		{
+			case ViewList.login :
+				core.PageManage.getInstance().addViewControl(LoginViewControl, core.ViewLayerType.SceneLayer,
+							 core.RemoveViewType.RemoveBefore);
+				break;
+			case ViewList.Main :
+				core.PageManage.getInstance().addViewControl(MainMenuViewControl, core.ViewLayerType.SceneLayer,
+							 core.RemoveViewType.RemoveBefore);
+				break;
+			case ViewList.battle :
+				core.PageManage.getInstance().addViewControl(BattleViewControl, core.ViewLayerType.SceneLayer,
+							 core.RemoveViewType.RemoveBefore);
+		}
 	}
 
 }

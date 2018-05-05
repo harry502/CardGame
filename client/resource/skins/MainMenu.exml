@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="MainMenu" width="1920" height="1080" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="bg5_png" left="0" top="0" bottom="0" right="0"/>
+	<e:Group id="NormalGame" width="700" height="200" horizontalCenter="0" verticalCenter="-100">
+		<e:Image source="Button_png" scaleX="1" scaleY="1" width="700" height="200" horizontalCenter="0" verticalCenter="0"/>
+		<e:Label text="匹配对战" size="80" fontFamily="KaiTi" horizontalCenter="0" verticalCenter="0" textColor="0x000000" bold="true" verticalAlign="middle" textAlign="center"/>
+	</e:Group>
+	<e:Group id="RankGame" width="700" height="200" horizontalCenter="0" verticalCenter="150">
+		<e:Image source="Button_png" scaleX="1" scaleY="1" width="700" height="200" horizontalCenter="0" verticalCenter="0"/>
+		<e:Label text="排位对战" size="80" fontFamily="KaiTi" horizontalCenter="0" verticalCenter="0" textColor="0x000000" bold="true" verticalAlign="middle" textAlign="center"/>
+	</e:Group>
+	<e:Group id="MyDeck" width="700" height="200" horizontalCenter="0" verticalCenter="400">
+		<e:Image source="Button_png" scaleX="1" scaleY="1" width="700" height="200" horizontalCenter="0" verticalCenter="0"/>
+		<e:Label text="我的卡组" size="80" fontFamily="KaiTi" horizontalCenter="0" verticalCenter="0" textColor="0x000000" bold="true" verticalAlign="middle" textAlign="center"/>
+	</e:Group>
+	<e:Image source="banner_advance_yell_png" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="-400" height="200" width="800"/>
+	<e:Label text="主界面" horizontalCenter="0" verticalCenter="-430" size="100" textColor="0x000000" verticalAlign="middle" textAlign="center" fontFamily="KaiTi" bold="true"/>
+	<e:Group id="WaitGroup" width="1500" height="300" horizontalCenter="0" verticalCenter="0" visible="false">
+		<e:Image source="Background_png" horizontalCenter="0" verticalCenter="0" width="1500" height="300" x="-399.99999999999994" y="0" scaleX="1" scaleY="1"/>
+		<e:Label text="正在寻找对手，请稍后..." scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0" size="120"/>
+	</e:Group>
+</e:Skin>

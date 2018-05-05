@@ -2,7 +2,12 @@
 	"skins": {},
 	"autoGenerateExmlsList": true,
 	"exmls": [
-		"resource/skins/LoadingSkin.exml"
+		"resource/skins/CardSkin.exml",
+		"resource/skins/BattleSkin.exml",
+		"resource/skins/LoadingSkin.exml",
+		"resource/skins/TextInputSkin.exml",
+		"resource/skins/LoginSkin.exml",
+		"resource/skins/MainMenu.exml"
 	],
 	"path": "resource/default.thm.json"
 }

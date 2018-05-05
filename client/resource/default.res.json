@@ -1,12 +1,16 @@
 {
 	"groups": [
 		{
-			"keys": "netconfig_json",
+			"keys": "bg_loding_png,bg1_png,bg10_png,bg5_png,bg6_png,10101_a_png,10201_a_png,10401_a_png,10601_a_png,20101_a_png,20201_a_png,30102_a_png,30401_a_png,30502_a_png,30601_a_png,40101_a_png,AvatarBottom_png,AvatarTop_png,Background_png,BackgroundPlayerTop_png,banner_advance_yell_png,base_png,bg_ft_png,block01_png,Border_png,BoxTop_png,btn_back_orangel_up_png,Button_png,Button1_png,Card_png,Card.png_meta,Glow_png,Glow.png_meta,IconShield_png,IconShield.png_meta,IconSword_png,IconSword.png_meta,Shield_png,Shield.png_meta,Skull_png,Skull.png_meta,Sword_png,Sword.png_meta,card_bg_png,GameName_png,gamestart_png,icon_cocupation_bg_png,Loginbg_jpg,rank_png",
 			"name": "game"
 		},
 		{
-			"keys": "netconfig_json",
+			"keys": "netconfig_json,CardConfig_json",
 			"name": "loading"
+		},
+		{
+			"keys": "登录界面BGM_mp3",
+			"name": "sound"
 		}
 	],
 	"resources": [
@@ -14,6 +18,261 @@
 			"url": "config/netconfig.json",
 			"type": "json",
 			"name": "netconfig_json"
+		},
+		{
+			"url": "sound/登录界面BGM.mp3",
+			"type": "sound",
+			"name": "登录界面BGM_mp3"
+		},
+		{
+			"url": "images/bg/bg1.png",
+			"type": "image",
+			"name": "bg1_png"
+		},
+		{
+			"url": "images/bg/bg10.png",
+			"type": "image",
+			"name": "bg10_png"
+		},
+		{
+			"url": "images/bg/bg5.png",
+			"type": "image",
+			"name": "bg5_png"
+		},
+		{
+			"url": "images/bg/bg6.png",
+			"type": "image",
+			"name": "bg6_png"
+		},
+		{
+			"url": "images/bg/bg_loding.png",
+			"type": "image",
+			"name": "bg_loding_png"
+		},
+		{
+			"url": "images/UI/AvatarBottom.png",
+			"type": "image",
+			"name": "AvatarBottom_png"
+		},
+		{
+			"url": "images/UI/AvatarTop.png",
+			"type": "image",
+			"name": "AvatarTop_png"
+		},
+		{
+			"url": "images/UI/Background.png",
+			"type": "image",
+			"name": "Background_png"
+		},
+		{
+			"url": "images/UI/BackgroundPlayerTop.png",
+			"type": "image",
+			"name": "BackgroundPlayerTop_png"
+		},
+		{
+			"url": "images/UI/Border.png",
+			"type": "image",
+			"name": "Border_png"
+		},
+		{
+			"url": "images/UI/BoxTop.png",
+			"type": "image",
+			"name": "BoxTop_png"
+		},
+		{
+			"url": "images/UI/Button.png",
+			"type": "image",
+			"name": "Button_png"
+		},
+		{
+			"url": "images/UI/Button1.png",
+			"type": "image",
+			"name": "Button1_png"
+		},
+		{
+			"url": "images/UI/GameName.png",
+			"type": "image",
+			"name": "GameName_png"
+		},
+		{
+			"url": "images/UI/Loginbg.jpg",
+			"type": "image",
+			"name": "Loginbg_jpg"
+		},
+		{
+			"url": "images/UI/banner_advance_yell.png",
+			"type": "image",
+			"name": "banner_advance_yell_png"
+		},
+		{
+			"url": "images/UI/base.png",
+			"type": "image",
+			"name": "base_png"
+		},
+		{
+			"url": "images/UI/bg_ft.png",
+			"type": "image",
+			"name": "bg_ft_png"
+		},
+		{
+			"url": "images/UI/block01.png",
+			"type": "image",
+			"name": "block01_png"
+		},
+		{
+			"url": "images/UI/btn_back_orangel_up.png",
+			"type": "image",
+			"name": "btn_back_orangel_up_png"
+		},
+		{
+			"url": "images/UI/card_bg.png",
+			"type": "image",
+			"name": "card_bg_png"
+		},
+		{
+			"url": "images/UI/gamestart.png",
+			"type": "image",
+			"name": "gamestart_png"
+		},
+		{
+			"url": "images/UI/icon_cocupation_bg.png",
+			"type": "image",
+			"name": "icon_cocupation_bg_png"
+		},
+		{
+			"url": "images/UI/rank.png",
+			"type": "image",
+			"name": "rank_png"
+		},
+		{
+			"url": "images/heros/10101_a.png",
+			"type": "image",
+			"name": "10101_a_png"
+		},
+		{
+			"url": "images/heros/10201_a.png",
+			"type": "image",
+			"name": "10201_a_png"
+		},
+		{
+			"url": "images/heros/10401_a.png",
+			"type": "image",
+			"name": "10401_a_png"
+		},
+		{
+			"url": "images/heros/10601_a.png",
+			"type": "image",
+			"name": "10601_a_png"
+		},
+		{
+			"url": "images/heros/20101_a.png",
+			"type": "image",
+			"name": "20101_a_png"
+		},
+		{
+			"url": "images/heros/20201_a.png",
+			"type": "image",
+			"name": "20201_a_png"
+		},
+		{
+			"url": "images/heros/30102_a.png",
+			"type": "image",
+			"name": "30102_a_png"
+		},
+		{
+			"url": "images/heros/30401_a.png",
+			"type": "image",
+			"name": "30401_a_png"
+		},
+		{
+			"url": "images/heros/30502_a.png",
+			"type": "image",
+			"name": "30502_a_png"
+		},
+		{
+			"url": "images/heros/30601_a.png",
+			"type": "image",
+			"name": "30601_a_png"
+		},
+		{
+			"url": "images/heros/40101_a.png",
+			"type": "image",
+			"name": "40101_a_png"
+		},
+		{
+			"url": "images/UI/Card/Card.png",
+			"type": "image",
+			"name": "Card_png"
+		},
+		{
+			"url": "images/UI/Card/Card.png.meta",
+			"type": "bin",
+			"name": "Card.png_meta"
+		},
+		{
+			"url": "images/UI/Card/Glow.png",
+			"type": "image",
+			"name": "Glow_png"
+		},
+		{
+			"url": "images/UI/Card/Glow.png.meta",
+			"type": "bin",
+			"name": "Glow.png_meta"
+		},
+		{
+			"url": "images/UI/Card/IconShield.png",
+			"type": "image",
+			"name": "IconShield_png"
+		},
+		{
+			"url": "images/UI/Card/IconShield.png.meta",
+			"type": "bin",
+			"name": "IconShield.png_meta"
+		},
+		{
+			"url": "images/UI/Card/IconSword.png",
+			"type": "image",
+			"name": "IconSword_png"
+		},
+		{
+			"url": "images/UI/Card/IconSword.png.meta",
+			"type": "bin",
+			"name": "IconSword.png_meta"
+		},
+		{
+			"url": "images/UI/Card/Shield.png",
+			"type": "image",
+			"name": "Shield_png"
+		},
+		{
+			"url": "images/UI/Card/Shield.png.meta",
+			"type": "bin",
+			"name": "Shield.png_meta"
+		},
+		{
+			"url": "images/UI/Card/Skull.png",
+			"type": "image",
+			"name": "Skull_png"
+		},
+		{
+			"url": "images/UI/Card/Skull.png.meta",
+			"type": "bin",
+			"name": "Skull.png_meta"
+		},
+		{
+			"url": "images/UI/Card/Sword.png",
+			"type": "image",
+			"name": "Sword_png"
+		},
+		{
+			"url": "images/UI/Card/Sword.png.meta",
+			"type": "bin",
+			"name": "Sword.png_meta"
+		},
+		{
+			"url": "config/CardConfig.json",
+			"type": "json",
+			"name": "CardConfig_json"
 		}
 	]
 }
