@@ -32,11 +32,11 @@ class BattleViewControl extends core.ViewController {
 
 	public StartGame(userId:string)
 	{
-		if(GameInfo.getInst().selfUserId = userId)
+		if(GameInfo.getInst().selfUserId == userId)
 		{
 			this.view.StartGame("Me");
 		}
-		else if(GameInfo.getInst().rivalUserId = userId)
+		else if(GameInfo.getInst().rivalUserId == userId)
 		{
 			this.view.StartGame("Enemy");
 		}
@@ -44,7 +44,36 @@ class BattleViewControl extends core.ViewController {
 		{
 			console.error("无效UserId");
 		}
-		
+	}
+
+	public EnemyNextTurn()
+	{
+		this.view.EnemyNextTurn();
+	}
+
+	public Enemysummon(Block_num:number,CardId:number)
+	{
+		this.view.Enemysummon(Block_num,CardId);
+	}
+
+	public Result(winner:string)
+	{
+		if(winner == GameInfo.getInst().selfUserId)
+		{
+			this.view.Result("Me");
+		}
+		else if(winner == GameInfo.getInst().rivalUserId)
+		{
+			this.view.Result("Enemy");
+		}
+		else if(winner == "")
+		{
+			this.view.Result("");
+		}
+		else
+		{
+			console.error("无效UserId");
+		}
 	}
 
 }

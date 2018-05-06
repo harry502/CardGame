@@ -36,8 +36,8 @@
 			<e:Label text="卡组" size="50" left="30" x="4.999999999999993" scaleX="1" scaleY="1" top="30"/>
 			<e:Label text="手牌" size="50" left="30" x="4.999999999999993" scaleX="1" scaleY="1" top="120"/>
 			<e:Label text="HP" size="50" left="30" x="4.999999999999993" scaleX="1" scaleY="1" top="200"/>
-			<e:Label id="EnemyCardNum" text="20" size="50" right="20" top="30" verticalAlign="middle" textAlign="center" bold="true" anchorOffsetX="0" width="146.91" anchorOffsetY="0" height="50"/>
-			<e:Label id="EnemyHandNum" text="0" size="50" right="20" top="121" verticalAlign="middle" textAlign="center" bold="true" anchorOffsetX="0" width="146.91" anchorOffsetY="0" height="50"/>
+			<e:Label id="EnemyCardNum" text="17" size="50" right="20" top="30" verticalAlign="middle" textAlign="center" bold="true" anchorOffsetX="0" width="146.91" anchorOffsetY="0" height="50"/>
+			<e:Label id="EnemyHandNum" text="3" size="50" right="20" top="121" verticalAlign="middle" textAlign="center" bold="true" anchorOffsetX="0" width="146.91" anchorOffsetY="0" height="50"/>
 			<e:Label id="EnemyHP" text="30" size="50" right="20" top="203" verticalAlign="middle" textAlign="center" bold="true" anchorOffsetX="0" width="146.91" anchorOffsetY="0" height="50"/>
 		</e:Group>
 		<e:Group id="HandCardBox" width="1100" height="280" x="368" y="741.21" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1">
@@ -51,13 +51,13 @@
 			<e:Label id="EnemyTime" text="60" horizontalCenter="0" verticalCenter="0" size="140"/>
 		</e:Group>
 		<ns1:CardView id="ShowCard" skinName="CardSkin" scaleX="1.8" scaleY="1.8" left="150" top="0" visible="false"/>
-		<e:Group id="TishiGroup" width="1500" height="600" horizontalCenter="0" verticalCenter="0" visible="false">
-			<e:Image source="Background_png" left="0" right="0" top="0" bottom="0"/>
-			<e:Label id="Tishi" text="您是先手" horizontalCenter="0" verticalCenter="10" size="300"/>
-		</e:Group>
 		<e:Group id="ExitTurnGroup" width="450" height="150" right="0" bottom="60">
 			<e:Image source="btn_back_orangel_up_png" width="450" height="150" horizontalCenter="0" verticalCenter="0"/>
 			<e:Label text="结束回合" horizontalCenter="0" verticalCenter="0" size="100" fontFamily="KaiTi" verticalAlign="middle" textAlign="center" textColor="0x000000"/>
 		</e:Group>
+	</e:Group>
+	<e:Group id="TishiGroup" width="1500" height="600" horizontalCenter="0" verticalCenter="0" visible="false">
+		<e:Image source="Background_png" left="0" right="0" top="0" bottom="0"/>
+		<e:Label id="Tishi" text="您是先手" horizontalCenter="0" verticalCenter="10" size="300"/>
 	</e:Group>
 </e:Skin>

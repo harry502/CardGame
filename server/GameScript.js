@@ -35,20 +35,11 @@ GameScript.prototype.startGame = function(gateWayObj) {
 	},1000);
 
 	//60秒后结束游戏
-	this.intervalID = this.registerInterval(this, "countResult", 60*1000 + 3500,gateWayObj);
+	this.intervalID = this.registerInterval(this, "countResult", 30*60*1000,gateWayObj);
 
 	var retData = {};
 
-	//this.playerList[1].isRobot = 1;
-
 	this.registerTimeOut(this, 'sendInitData', 0);
-
-	
-	if (this.playerList[0].isRobot == 1){
-		this.registerTimeOut(this, "robotStart", 3500,this.playerList[0].userId);
-	}else if(this.playerList[1].isRobot == 1){
-		this.registerTimeOut(this, "robotStart", 3500,this.playerList[1].userId);
-	}
 
 	return true;
 }
@@ -56,10 +47,45 @@ GameScript.prototype.startGame = function(gateWayObj) {
 GameScript.prototype.sendInitData = function(){
 	var retData = {};
 	//房间广播同步房间数据
-	retData.selfDir = 0;
-	this.sendCPRPC("StartGame", this.playerList[0].userId,retData);
-	retData.selfDir = 1;
-	this.sendCPRPC("StartGame", this.playerList[1].userId,retData);
+	retData.StartUserId = this.playerList[0].userId;
+	this.sendCPBroadcast("StartGame",retData);
+}
+
+GameScript.prototype.summonCard = function(gateWayObj,userId,params){
+	var Block_num = params.Block_num;
+	var CardId = params.CardId;
+	var retData = {};
+
+	retData.CardId = CardId;
+	retData.Block_num = Block_num;
+	if(this.playerList[0].userId == userId)
+	{
+		this.sendCPRPC("Enemysummon",this.playerList[1].userId,retData);
+	}
+	else
+	{
+		this.sendCPRPC("Enemysummon",this.playerList[0].userId,retData);
+	}
+}
+
+GameScript.prototype.NextTurn = function(gateWayObj,userId,params){
+	var retData = {};
+
+	if(this.playerList[0].userId == userId)
+	{
+		this.sendCPRPC("EnemyNextTurn",this.playerList[1].userId,retData);
+	}
+	else
+	{
+		this.sendCPRPC("EnemyNextTurn",this.playerList[0].userId,retData);
+	}
+}
+
+GameScript.prototype.gameover = function(gateWayObj,userId,params){
+	var retData = {};
+	retData.winner = userId;
+
+	this.sendCPBroadcast("result",retData);
 }
 
 //结果计算
@@ -69,10 +95,10 @@ GameScript.prototype.countResult = function(gateWayObj) {
 
 	var retData = {};
 	//通过得分判断胜负
-	if (this.playerList[0].score > this.playerList[1].score ){
-		retData.winner = this.playerList[0].userId;
-	}else if (this.playerList[0].score < this.playerList[1].score){
+	if (this.playerList[0].HP <= 0 || this.playerList[0].DeckNum <= 0){
 		retData.winner = this.playerList[1].userId;
+	}else if (this.playerList[1].HP <= 0 || this.playerList[1].DeckNum <= 0){
+		retData.winner = this.playerList[0].userId;
 	}else{
 		retData.winner = "";
 	}

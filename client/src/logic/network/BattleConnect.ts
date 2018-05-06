@@ -100,6 +100,15 @@ class BattleConnect
                         GameViewControl.getInst().LoadView(ViewList.battle);
                         this.Control.StartGame(gameInfo.StartUserId);
                         break;
+                    case "Enemysummon":
+                        this.Control.Enemysummon(sm.param.Block_num,sm.param.CardId);
+                        break;
+                    case "EnemyNextTurn":
+                        this.Control.EnemyNextTurn();
+                        break;
+                    case "Result":
+                        this.Control.Result(sm.param.winner);
+                        break;
                     default:
                         break;
                 }
