@@ -3,7 +3,8 @@ enum Playerstatus
     MyTurn = 0,
     Battle = 1,
     EnemyTurn = 2,
-    Stop = 3
+    Stop = 3,
+    End = 4
 }
 
 
@@ -21,9 +22,11 @@ class BattleView extends core.UIView {
     private MyCardNum:eui.Label;
     private MyHandNum:eui.Label;
     private MyHP:eui.Label;
+    private MyPower:eui.Label;
     private EnemyCardNum:eui.Label;
     private EnemyHandNum:eui.Label;
     private EnemyHP:eui.Label;
+    private EnemyPower:eui.Label;
     private MyTimeGroup:eui.Group;
     private MyTime:eui.Label;
     private EnemyTimeGroup:eui.Group;
@@ -44,6 +47,7 @@ class BattleView extends core.UIView {
     private HandCard:CardView[] = new Array<CardView>();
     private Mystatus:Playerstatus;
     private Timer:egret.Timer;
+    private MyBlocks:eui.Image[] = new Array<eui.Image>();
 
 
 	public constructor() {
@@ -62,9 +66,9 @@ class BattleView extends core.UIView {
             this.EnemyTime.text = String( Number(this.EnemyTime.text) - 1 );
         },this);
         this.Timer.addEventListener(egret.TimerEvent.TIMER_COMPLETE,()=>{
-            if(this.Mystatus = Playerstatus.MyTurn)
+            if(this.Mystatus == Playerstatus.MyTurn)
             {
-                this.BattleTurn();
+                this.MyBattleTurn();
             }
         },this);
 
@@ -84,13 +88,16 @@ class BattleView extends core.UIView {
         this.ExitTurnGroup.addEventListener(egret.TouchEvent.TOUCH_BEGIN,()=>{
             if(this.Mystatus == Playerstatus.MyTurn)
             {
-                this.BattleTurn();
+                this.MyBattleTurn();
             }
         },this)
 	}
 
     private init()
     {
+        this.MyBlocks.push(this.My_block_1);
+        this.MyBlocks.push(this.My_block_2);
+        this.MyBlocks.push(this.My_block_3);
         this.MyHP.text = String(Config.MaxHP);
         this.MyHandNum.text = "0";
         this.MyCardNum.text = String(Config.MaxDeckNum);
@@ -119,50 +126,35 @@ class BattleView extends core.UIView {
                 return;
             }
 
-            if(this.My_block_1.hitTestPoint(evt.stageX,evt.stageY) && this.MyBattleCard[0] == null)
+            for(let i = 0; i<this.MyBlocks.length; i++)
             {
-                cardView.CanTouch = false;
-                var pos = this.MyBattleBox.localToGlobal(this.My_block_1.x,this.My_block_1.y);
-                cardView.x = pos.x;
-                cardView.y = pos.y;
-                this.MyBattleCard[0] = cardView;
-                this.HandCard.splice(this.HandCard.indexOf(cardView),1);
+                if(this.MyBlocks[i].hitTestPoint(evt.stageX,evt.stageY) && this.MyBattleCard[i] == null)
+                {
+                    if(this.UsePower("Me",cardView.Card.Rank) == false)
+                    {
+                        this.TishiGroup.visible = true;
+                        this.Tishi.text = "能量不足";
+                        this.Mystatus = Playerstatus.Stop;
+                        egret.setTimeout(()=>{
+                            this.TishiGroup.visible = false;
+                            this.Mystatus = Playerstatus.MyTurn;
+                        },this,1000);
+                        break;
+                    }
 
-                //网络请求，召唤卡片
-                var data = {};
-                data["Block_num"] = 0;
-                data["CardId"] = cardView.Card.CardId;
-                ALISDK.CatcherSDK.instance().sendJson({function:"summonCard",params:data});
-            }
-            else if(this.My_block_2.hitTestPoint(evt.stageX,evt.stageY) && this.MyBattleCard[1] == null)
-            {
-                cardView.CanTouch = false;
-                var pos = this.MyBattleBox.localToGlobal(this.My_block_2.x,this.My_block_2.y);
-                cardView.x = pos.x;
-                cardView.y = pos.y;
-                this.MyBattleCard[1] = cardView;
-                this.HandCard.splice(this.HandCard.indexOf(cardView),1);
+                    cardView.CanTouch = false;
+                    var pos = this.MyBattleBox.localToGlobal(this.MyBlocks[i].x,this.MyBlocks[i].y);
+                    cardView.x = pos.x;
+                    cardView.y = pos.y;
+                    this.MyBattleCard[i] = cardView;
+                    this.HandCard.splice(this.HandCard.indexOf(cardView),1);
 
-                //网络请求，召唤卡片
-                var data = {};
-                data["Block_num"] = 1;
-                data["CardId"] = cardView.Card.CardId;
-                ALISDK.CatcherSDK.instance().sendJson({function:"summonCard",params:data});
-            }
-            else if(this.My_block_3.hitTestPoint(evt.stageX,evt.stageY) && this.MyBattleCard[2] == null)
-            {
-                cardView.CanTouch = false;
-                var pos = this.MyBattleBox.localToGlobal(this.My_block_3.x,this.My_block_3.y);
-                cardView.x = pos.x;
-                cardView.y = pos.y;
-                this.MyBattleCard[2] = cardView;
-                this.HandCard.splice(this.HandCard.indexOf(cardView),1);
-
-                //网络请求，召唤卡片
-                var data = {};
-                data["Block_num"] = 2;
-                data["CardId"] = cardView.Card.CardId;
-                ALISDK.CatcherSDK.instance().sendJson({function:"summonCard",params:data});
+                    //网络请求，召唤卡片
+                    var data = {};
+                    data["Block_num"] = i;
+                    data["CardId"] = cardView.Card.CardId;
+                    ALISDK.CatcherSDK.instance().sendJson({function:"summonCard",params:data});
+                }
             }
 
             this.UpdateHandCard();
@@ -181,6 +173,8 @@ class BattleView extends core.UIView {
             egret.setTimeout(()=>{
                 this.TishiGroup.visible = false;
                 this.Mystatus = Playerstatus.MyTurn;
+                this.AddPower("Me");
+                this.DrawCard();
                 this.Timer.start();
             },this,3000)
         }
@@ -190,10 +184,14 @@ class BattleView extends core.UIView {
             this.Tishi.text = "您是后手";
             this.MyTimeGroup.visible = false;
             this.EnemyTimeGroup.visible = true;
+            this.ExitTurnGroup.visible = false;
 
             egret.setTimeout(()=>{
                 this.TishiGroup.visible = false;
                 this.Mystatus = Playerstatus.EnemyTurn;
+                this.AddPower("Enemy");
+                this.MyCardNum.text = String( Number(this.MyCardNum.text) - 1 );
+                this.MyHandNum.text = String(Config.StartHandNum + 1);
                 this.Timer.start();
             },this,3000)
         }
@@ -265,7 +263,7 @@ class BattleView extends core.UIView {
     }
 
     /** 开始战斗阶段 */
-    public BattleTurn()
+    public MyBattleTurn()
     {
         this.Mystatus = Playerstatus.Battle;
 
@@ -299,7 +297,11 @@ class BattleView extends core.UIView {
     {   
         this.MyTimeGroup.visible = false;
         this.EnemyTimeGroup.visible = true;
+        this.ExitTurnGroup.visible = false;
         this.Timer.reset();
+
+        this.AddPower("Enemy");
+        //抽卡
         if(Number(this.EnemyCardNum.text)>0)
         {
             this.EnemyCardNum.text = String( Number(this.EnemyCardNum.text) - 1);
@@ -320,6 +322,11 @@ class BattleView extends core.UIView {
         this.EnemyTimeGroup.visible = true;
 
         egret.setTimeout(()=>{
+            if(this.Mystatus == Playerstatus.End)
+            {
+                return;
+            }
+
             this.TishiGroup.visible = false;
             this.Mystatus = Playerstatus.EnemyTurn;           
             this.Timer.reset();
@@ -331,17 +338,29 @@ class BattleView extends core.UIView {
 
     public EnemyNextTurn()
     {
+        if(this.Mystatus == Playerstatus.End)
+        {
+            return;
+        }
+
         this.Mystatus = Playerstatus.Battle;
         this.EnemyBattleTurn();
 
+        this.MyTurn();
+    }
+
+    private MyTurn()
+    {
         this.TishiGroup.visible = true;
         this.Tishi.text = "您的回合";
         this.MyTimeGroup.visible = true;
         this.EnemyTimeGroup.visible = false;
+        this.ExitTurnGroup.visible = true;
 
         egret.setTimeout(()=>{
             this.TishiGroup.visible = false;
             this.Mystatus = Playerstatus.MyTurn;
+            this.AddPower("Me");
             this.DrawCard();        
             this.Timer.reset();
             this.MyTime.text = String(Config.TurnTime);
@@ -374,6 +393,17 @@ class BattleView extends core.UIView {
 
     public Enemysummon(Block_num:number,CardId:number)
     {
+        if(this.Mystatus == Playerstatus.End)
+        {
+            return;
+        }
+
+        if(this.UsePower("Enemy",Cardinfo.getInst().GetCardInfo(CardId).Rank ) == false)
+        {
+            console.error("对手法力值无法召唤");
+            return;
+        }
+
         var cardView = new CardView();
         this.GameGroup.addChild(cardView);
         cardView.init(CardId);
@@ -405,10 +435,15 @@ class BattleView extends core.UIView {
 
     public Result(Winner:"Me"|"Enemy"|"")
     {
+        if(this.Mystatus == Playerstatus.End)
+        {
+            return;
+        }
+
         this.Timer.stop();
         this.MyTimeGroup.visible = false;
         this.EnemyTimeGroup.visible = false;
-
+        this.Mystatus = Playerstatus.End;
         this.TishiGroup.visible = true;
         if(Winner == "Me")
         {
@@ -421,6 +456,51 @@ class BattleView extends core.UIView {
         else
         {
             this.Tishi.text = "平局";
+        }
+
+        egret.setTimeout(()=>{
+            GameViewControl.getInst().LoadView(ViewList.Main);
+            //BattleConnect.getInst().end();
+        },this,3000)
+    }
+
+    public AddPower(Player:"Me"|"Enemy")
+    {
+        if(Player == "Me")
+        {
+            this.MyPower.text = String(Number(this.MyPower.text) + Config.everyTurnPower );
+        }
+        else
+        {
+            this.EnemyPower.text = String(Number(this.EnemyPower.text) + Config.everyTurnPower );
+        }
+    }
+
+    public UsePower(Player:"Me"|"Enemy",pow:number):boolean
+    {
+        if(Player == "Me")
+        {
+            if(Number(this.MyPower.text) >= pow)
+            {
+                this.MyPower.text = String( Number(this.MyPower.text) - pow);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            if(Number(this.EnemyPower.text) >= pow)
+            {
+                this.EnemyPower.text = String( Number(this.EnemyPower.text) - pow);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 

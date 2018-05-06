@@ -14,7 +14,7 @@
             "Name" : "弓箭手",
             "Skill" : "年轻的弓箭手",
             "Rank" : "2",
-            "Attack" : "4",
+            "Attack" : "3",
             "HP" : "2",
             "IconUrl" : "10201_a_png"
         },
@@ -41,8 +41,8 @@
             "Name" : "狂野女战士",
             "Skill" : "女战士拿起斧头之后可不是好惹的",
             "Rank" : "6",
-            "Attack" : "5",
-            "HP" : "5",
+            "Attack" : "4",
+            "HP" : "7",
             "IconUrl" : "20101_a_png"
         },
         {
@@ -59,8 +59,8 @@
             "Name" : "卡迪",
             "Skill" : "萌萌哒的猫耳大刀小正太",
             "Rank" : "7",
-            "Attack" : "4",
-            "HP" : "7",
+            "Attack" : "5",
+            "HP" : "8",
             "IconUrl" : "30102_a_png"
         },
         {
@@ -68,7 +68,7 @@
             "Name" : "卡密",
             "Skill" : "猫耳美少女魔法师",
             "Rank" : "6",
-            "Attack" : "6",
+            "Attack" : "8",
             "HP" : "3",
             "IconUrl" : "30401_a_png"
         },
@@ -77,8 +77,8 @@
             "Name" : "神圣骑士",
             "Skill" : "冷静帅气的圣骑士大人",
             "Rank" : "8",
-            "Attack" : "5",
-            "HP" : "8",
+            "Attack" : "6",
+            "HP" : "9",
             "IconUrl" : "30502_a_png"
         },
         {

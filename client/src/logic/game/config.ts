@@ -8,6 +8,7 @@ namespace Config {
     export const MaxDeckNum:number = 20;
     export const MaxTrunNum:number = 30;
     export const TurnTime:number = 60;
+    export const everyTurnPower:number = 5;
 
     export const HandBoxWidth:number = 1100;
     export const HandBoxheight:number = 280;

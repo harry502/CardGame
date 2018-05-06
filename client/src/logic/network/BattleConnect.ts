@@ -24,7 +24,6 @@ interface ServerMsg {
     param: any;
 }
 
-//server message
 interface SMP_StartGame {
     StartUserId:string
 }
@@ -42,19 +41,19 @@ class BattleConnect
         return BattleConnect.inst;
     }
 
+    public constructor()
+    {
+        this.init();
+        this.bind();
+    }
+
     public bindBattleView(Control:BattleViewControl)
     {
         this.Control = Control;
     }
 
-    public init():void
-    {
-        var URL = RES.getRes("netconfig_json");
-		ALISDK.CatcherSDK.init({
-            url: URL.url,
-            gameId: '1231231',
-            gameVersion: "0.0.1",
-        });
+    public bind():void
+    {	
         let self = this;
         ALISDK.CatcherSDK.instance()
             .on('CONNECT', (e) => {
@@ -112,7 +111,7 @@ class BattleConnect
                     default:
                         break;
                 }
-            }).start();
+            });
     }
 
     public getisGameReady():boolean
@@ -122,6 +121,22 @@ class BattleConnect
 
     public start():void
     {
+        ALISDK.CatcherSDK.instance().start();
         ALISDK.CatcherSDK.instance().updateProgress(ALISDK.CatcherSDK.ProgressState.COMPLETED);
+    }
+
+    public end():void
+    {
+        ALISDK.CatcherSDK.instance().end();
+    }
+
+    public init()
+    {
+        var URL = RES.getRes("netconfig_json");
+        ALISDK.CatcherSDK.init({
+            url: URL.url,
+            gameId: '1231231',
+            gameVersion: "0.0.1",
+        });
     }
 }

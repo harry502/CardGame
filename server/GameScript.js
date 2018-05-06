@@ -85,7 +85,7 @@ GameScript.prototype.gameover = function(gateWayObj,userId,params){
 	var retData = {};
 	retData.winner = userId;
 
-	this.sendCPBroadcast("result",retData);
+	this.sendCPBroadcast("Result",retData);
 }
 
 //结果计算
