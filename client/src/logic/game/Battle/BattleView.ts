@@ -248,8 +248,7 @@ class BattleView extends core.UIView {
         {
             this.EnemyHP.text = String( Number(this.EnemyHP.text) - HP);
         }
-
-        if(Player == "Me" && Number(this.MyHP.text)<=HP )
+        else if(Player == "Me" && Number(this.MyHP.text)<=HP )
         {
             this.MyHP.text = "0";
         }
@@ -460,7 +459,7 @@ class BattleView extends core.UIView {
 
         egret.setTimeout(()=>{
             GameViewControl.getInst().LoadView(ViewList.Main);
-            //BattleConnect.getInst().end();
+            BattleConnect.getInst().end();
         },this,3000)
     }
 

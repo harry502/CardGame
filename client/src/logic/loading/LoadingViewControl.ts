@@ -23,7 +23,7 @@ class LoadingViewControl extends core.ViewController {
 		this.getParent().addChild(this.view);
 
 		var groupName: string = "game";
-		var subGroups: Array<string> = ["game", "sound"];
+		var subGroups: Array<string> = ["game"];
 		core.LoadingManage.getInstance().loadGroups(groupName, subGroups, this.onResourceLoadComplete, this.onResourceLoadProgress, this);
 	}
 

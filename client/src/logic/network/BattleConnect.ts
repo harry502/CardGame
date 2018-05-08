@@ -41,12 +41,6 @@ class BattleConnect
         return BattleConnect.inst;
     }
 
-    public constructor()
-    {
-        this.init();
-        this.bind();
-    }
-
     public bindBattleView(Control:BattleViewControl)
     {
         this.Control = Control;
