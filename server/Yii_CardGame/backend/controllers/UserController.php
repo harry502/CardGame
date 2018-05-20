@@ -46,7 +46,7 @@ class UserController extends ActiveController
                 'status' => 201,
                 'Mark' => '无效用户名'
             ];
-        } else if ($model->password != $_POST['password']) {
+        } else if ($model->password != $this->createToken($_POST['username'],$_POST['password'])) {
             return [
                 'status' => 202,
                 'Mark' => '密码错误'
@@ -76,7 +76,18 @@ class UserController extends ActiveController
         $modelClass = $this->modelClass;
         $model->attributes = Yii::$app->request->post();
         $model->password = $this->createToken($_POST['username'],$_POST['password']);
-        if (!$modelClass::find()->where(['username' => $model->username])->one()) {
+        
+        if(strlen($_POST['username']) < 6) {
+            return [
+                'status' => 202,
+                'Mark' => '用户名不可小于6位'
+            ];
+        } else if(strlen($_POST['password']) < 6) {
+            return [
+                'status' => 202,
+                'Mark' => '密码不可小于6位'
+            ];
+        } else if (!$modelClass::find()->where(['username' => $model->username])->one()) {
             if (!$model->save()) {
                 return array_values($model->getFirstErrors())[0];
             } else {
@@ -85,7 +96,7 @@ class UserController extends ActiveController
                     'Mark' => '注册成功'
                 ];
             }
-        } else {
+        }else {
             return [
                 'status' => 201,
                 'Mark' => '已有此用户名'

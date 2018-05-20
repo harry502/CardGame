@@ -1,11 +1,11 @@
 {
 	"groups": [
 		{
-			"keys": "bg_loding_png,10101_a_png,10201_a_png,10401_a_png,10601_a_png,20101_a_png,20201_a_png,30102_a_png,30401_a_png,30502_a_png,30601_a_png,40101_a_png,AvatarBottom_png,AvatarTop_png,Background_png,BackgroundPlayerTop_png,banner_advance_yell_png,base_png,block01_png,Border_png,BoxTop_png,btn_back_orangel_up_png,Button_png,Button1_png,Card_png,Card.png_meta,Glow.png_meta,IconShield_png,IconShield.png_meta,IconSword_png,IconSword.png_meta,Shield.png_meta,Skull.png_meta,Sword.png_meta,card_bg_png,GameName_png,gamestart_png,icon_cocupation_bg_png,Loginbg_jpg,rank_png,bg5_png",
+			"keys": "bg_loding_png,10101_a_png,10201_a_png,10401_a_png,10601_a_png,20101_a_png,20201_a_png,30102_a_png,30401_a_png,30502_a_png,30601_a_png,40101_a_png,AvatarBottom_png,AvatarTop_png,Background_png,BackgroundPlayerTop_png,banner_advance_yell_png,base_png,block01_png,Border_png,BoxTop_png,btn_back_orangel_up_png,Button_png,Button1_png,Card_png,Card.png_meta,Glow.png_meta,IconShield_png,IconShield.png_meta,IconSword_png,IconSword.png_meta,Shield.png_meta,Skull.png_meta,Sword.png_meta,card_bg_png,GameName_png,gamestart_png,icon_cocupation_bg_png,rank_png,bg5_png,Loginbg_jpg,blade03_png,EventBG_16_png,cions01_png",
 			"name": "game"
 		},
 		{
-			"keys": "netconfig_json,CardConfig_json",
+			"keys": "netconfig_json,CardConfig_json,Loginbg_jpg",
 			"name": "loading"
 		}
 	],
@@ -224,6 +224,56 @@
 			"url": "images/bg/bg5.png",
 			"type": "image",
 			"name": "bg5_png"
+		},
+		{
+			"url": "skins/AttackSkin.exml",
+			"type": "bin",
+			"name": "AttackSkin_exml"
+		},
+		{
+			"url": "skins/BattleSkin.exml",
+			"type": "bin",
+			"name": "BattleSkin_exml"
+		},
+		{
+			"url": "skins/CardSkin.exml",
+			"type": "bin",
+			"name": "CardSkin_exml"
+		},
+		{
+			"url": "skins/LoadingSkin.exml",
+			"type": "bin",
+			"name": "LoadingSkin_exml"
+		},
+		{
+			"url": "skins/LoginSkin.exml",
+			"type": "bin",
+			"name": "LoginSkin_exml"
+		},
+		{
+			"url": "skins/MainMenu.exml",
+			"type": "bin",
+			"name": "MainMenu_exml"
+		},
+		{
+			"url": "skins/TextInputSkin.exml",
+			"type": "bin",
+			"name": "TextInputSkin_exml"
+		},
+		{
+			"url": "images/UI/blade03.png",
+			"type": "image",
+			"name": "blade03_png"
+		},
+		{
+			"url": "images/bg/EventBG_16.png",
+			"type": "image",
+			"name": "EventBG_16_png"
+		},
+		{
+			"url": "images/UI/cions01.png",
+			"type": "image",
+			"name": "cions01_png"
 		}
 	]
 }

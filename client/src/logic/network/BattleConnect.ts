@@ -41,7 +41,7 @@ class BattleConnect
         return BattleConnect.inst;
     }
 
-    public bindBattleView(Control:BattleViewControl)
+    public bindBattleView(Control:BattleViewControl):void
     {
         this.Control = Control;
     }
@@ -67,11 +67,13 @@ class BattleConnect
                 }
             })
             .on('READY', (_e) => {
+                console.log("READY",_e);
             })
             .on('KICK', () => {
             })
             .on('GAMEOVER', (e) => {
-                console.log("onResult", e);
+                console.log("onResult",e);
+                self.isGameReady = false;
             })
             .on('BREAK', () => {
             })
@@ -88,6 +90,7 @@ class BattleConnect
 
                 switch (sm.function) {
                     case "StartGame":
+                        console.log("StartGame");
                         let gameInfo = sm.param as SMP_StartGame;
                         self.isGameReady = true;
                         GameViewControl.getInst().LoadView(ViewList.battle);
@@ -117,6 +120,14 @@ class BattleConnect
     {
         ALISDK.CatcherSDK.instance().start();
         ALISDK.CatcherSDK.instance().updateProgress(ALISDK.CatcherSDK.ProgressState.COMPLETED);
+
+        egret.setTimeout(()=>{
+            if(this.isGameReady == false)
+            {
+                ALISDK.CatcherSDK.instance().end();
+                this.start();
+            }
+        },this,12000);
     }
 
     public end():void
@@ -124,7 +135,7 @@ class BattleConnect
         ALISDK.CatcherSDK.instance().end();
     }
 
-    public init()
+    public init():void
     {
         var URL = RES.getRes("netconfig_json");
         ALISDK.CatcherSDK.init({

@@ -1,7 +1,7 @@
 
 class LoadingView extends core.UIView {
 
-	private t_loading: eui.Label = new eui.Label();
+	private t_loading: eui.Label;
 
 	public constructor() {
 		super("resource/skins/LoadingSkin.exml");

@@ -2,6 +2,7 @@
 	"skins": {},
 	"autoGenerateExmlsList": true,
 	"exmls": [
+		"resource/skins/AttackSkin.exml",
 		"resource/skins/CardSkin.exml",
 		"resource/skins/BattleSkin.exml",
 		"resource/skins/LoadingSkin.exml",

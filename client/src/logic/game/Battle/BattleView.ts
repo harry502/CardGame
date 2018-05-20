@@ -225,6 +225,38 @@ class BattleView extends core.UIView {
         }
     }
 
+    private AttackTween(start:egret.Point,end:egret.Point)
+    {
+        var tween = new eui.Component();
+        tween.skinName = "resource/skins/AttackSkin.exml";
+
+        if(start.y < end.y)
+        {
+            tween.rotation = 180;
+            tween.anchorOffsetX = tween.width/2;
+            tween.anchorOffsetY = tween.height/2;
+        }
+        else
+        {
+            tween.anchorOffsetX = tween.width/2;
+            tween.anchorOffsetY = tween.height/2;
+        }
+        this.GameGroup.addChild(tween);
+        tween.x = start.x;
+        tween.y = start.y;
+        tween.width = 256;
+        tween.height = 80;
+
+        egret.Tween.get(tween)
+        .to({
+            x:end.x,
+            y:end.y
+        },300)
+        .call(()=>{
+            this.GameGroup.removeChild(tween);
+        }, this);
+    }
+
     private addStandListener(cardView:CardView)
     {
         cardView.addEventListener(egret.TouchEvent.TOUCH_BEGIN,()=>{
@@ -270,24 +302,38 @@ class BattleView extends core.UIView {
         {
             if(this.MyBattleCard[i]!=null)
             {
-                if(this.EnemyBattleCard[i]!=null)
-                {
-                    var issurvival = this.EnemyBattleCard[i].BeHurted(this.MyBattleCard[i].GetAttack());
-                    if(issurvival == false)
+                var pos = this.EnemyBattleBox.localToGlobal(this.Enemy_block_1.x,this.Enemy_block_1.y);
+
+                var start:egret.Point = new egret.Point(this.MyBattleCard[i].x + this.MyBattleCard[i].width/2
+                                            ,this.MyBattleCard[i].y + this.MyBattleCard[i].height/2);
+                var end:egret.Point = new egret.Point(pos.x + this.Enemy_block_1.width/2 + i*242
+                                            ,pos.y + this.Enemy_block_1.height/2);
+
+                this.AttackTween(start,end);
+
+                egret.setTimeout(()=>{
+                    if(this.EnemyBattleCard[i]!=null)
                     {
-                        this.EnemyBattleCard[i] = null;
+                        var issurvival = this.EnemyBattleCard[i].BeHurted(this.MyBattleCard[i].GetAttack());
+                        if(issurvival == false)
+                        {
+                            this.EnemyBattleCard[i] = null;
+                        }
                     }
-                }
-                else
-                {
-                    this.HurtPlayer("Enemy",this.MyBattleCard[i].GetAttack());
-                }
+                    else
+                    {
+                        this.HurtPlayer("Enemy",this.MyBattleCard[i].GetAttack());
+                    }
+                },this,300);
+
             }
         }
 
         //TODO 网络请求，下一回合
-        this.Mystatus = Playerstatus.Stop;
-        this.EnemyTurn();
+        egret.setTimeout(()=>{
+            this.Mystatus = Playerstatus.Stop;
+            this.EnemyTurn();
+        },this,500);
         var data = {};
         ALISDK.CatcherSDK.instance().sendJson({function:"NextTurn",params:data});
     }
@@ -345,7 +391,9 @@ class BattleView extends core.UIView {
         this.Mystatus = Playerstatus.Battle;
         this.EnemyBattleTurn();
 
-        this.MyTurn();
+        egret.setTimeout(()=>{
+            this.MyTurn()
+        },this,500);
     }
 
     private MyTurn()
@@ -374,18 +422,29 @@ class BattleView extends core.UIView {
         {
             if(this.EnemyBattleCard[i]!=null)
             {
-                if(this.MyBattleCard[i]!=null)
-                {
-                    var issurvival = this.MyBattleCard[i].BeHurted(this.EnemyBattleCard[i].GetAttack());
-                    if(issurvival == false)
+                var pos = this.MyBattleBox.localToGlobal(this.My_block_1.x,this.My_block_1.y);
+
+                var start:egret.Point = new egret.Point(this.EnemyBattleCard[i].x + this.EnemyBattleCard[i].width/2
+                                            ,this.EnemyBattleCard[i].y + this.EnemyBattleCard[i].height/2);
+                var end:egret.Point = new egret.Point(pos.x + this.My_block_1.width/2 + i*242
+                                            ,pos.y + this.My_block_1.height/2);
+
+                this.AttackTween(start,end);
+
+                egret.setTimeout(()=>{
+                    if(this.MyBattleCard[i]!=null)
                     {
-                        this.MyBattleCard[i] = null;
+                        var issurvival = this.MyBattleCard[i].BeHurted(this.EnemyBattleCard[i].GetAttack());
+                        if(issurvival == false)
+                        {
+                            this.MyBattleCard[i] = null;
+                        }
                     }
-                }
-                else
-                {
-                    this.HurtPlayer("Me",this.EnemyBattleCard[i].GetAttack());
-                }
+                    else
+                    {
+                        this.HurtPlayer("Me",this.EnemyBattleCard[i].GetAttack());
+                    }
+                },this,300)
             }
         }
     }
