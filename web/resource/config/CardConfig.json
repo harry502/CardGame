@@ -1,0 +1,94 @@
+{
+    "Cards": [
+        {
+            "CardId" : "0",
+            "Name" : "战士",
+            "Skill" : "勇猛的战士不需要技能",
+            "Rank" : "3",
+            "Attack" : "2",
+            "HP" : "5",
+            "IconUrl" : "10101_a_png"
+        },
+        {
+            "CardId" : "1",
+            "Name" : "弓箭手",
+            "Skill" : "年轻的弓箭手",
+            "Rank" : "2",
+            "Attack" : "3",
+            "HP" : "2",
+            "IconUrl" : "10201_a_png"
+        },
+        {
+            "CardId" : "2",
+            "Name" : "魔法师",
+            "Skill" : "超级可爱的魔术师",
+            "Rank" : "3",
+            "Attack" : "5",
+            "HP" : "2",
+            "IconUrl" : "10401_a_png"
+        },
+        {
+            "CardId" : "3",
+            "Name" : "修女",
+            "Skill" : "让神圣的修女净化你的心灵吧",
+            "Rank" : "3",
+            "Attack" : "4",
+            "HP" : "3",
+            "IconUrl" : "10601_a_png"
+        },
+        {
+            "CardId" : "4",
+            "Name" : "狂野女战士",
+            "Skill" : "女战士拿起斧头之后可不是好惹的",
+            "Rank" : "6",
+            "Attack" : "4",
+            "HP" : "7",
+            "IconUrl" : "20101_a_png"
+        },
+        {
+            "CardId" : "5",
+            "Name" : "女猎手",
+            "Skill" : "你永远不知道她的下一个猎物是谁",
+            "Rank" : "5",
+            "Attack" : "6",
+            "HP" : "3",
+            "IconUrl" : "20201_a_png"
+        },
+        {
+            "CardId" : "6",
+            "Name" : "卡迪",
+            "Skill" : "萌萌哒的猫耳大刀小正太",
+            "Rank" : "7",
+            "Attack" : "5",
+            "HP" : "8",
+            "IconUrl" : "30102_a_png"
+        },
+        {
+            "CardId" : "7",
+            "Name" : "卡密",
+            "Skill" : "猫耳美少女魔法师",
+            "Rank" : "6",
+            "Attack" : "8",
+            "HP" : "3",
+            "IconUrl" : "30401_a_png"
+        },
+        {
+            "CardId" : "8",
+            "Name" : "神圣骑士",
+            "Skill" : "冷静帅气的圣骑士大人",
+            "Rank" : "8",
+            "Attack" : "6",
+            "HP" : "9",
+            "IconUrl" : "30502_a_png"
+        },
+        {
+            "CardId" : "9",
+            "Name" : "冯杰聚聚",
+            "Skill" : "最强的那个男人",
+            "Rank" : "9",
+            "Attack" : "9",
+            "HP" : "9",
+            "IconUrl" : "40101_a_png"
+        }
+    ]
+}

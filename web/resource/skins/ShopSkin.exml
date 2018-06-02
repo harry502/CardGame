@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ShopSkin" width="1920" height="1080" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Image source="EventBG_16_png" left="0" right="0" top="0" bottom="0"/>
+	<e:Group width="317" height="120" top="30" right="30" scaleX="1.5" scaleY="1.5">
+		<e:Image source="Background_png" right="0" scale9Grid="39,23,239,39" anchorOffsetY="0" height="128" x="65" scaleX="1" scaleY="1" verticalCenter="0"/>
+		<e:Image source="cions01_png" x="12.5" verticalCenter="0"/>
+		<e:Label id="Coins" text="100" size="60" verticalCenter="0" right="18"/>
+	</e:Group>
+	<e:Group id="BuyPack" width="700" height="200" horizontalCenter="0" verticalCenter="200" scaleX="1" scaleY="1">
+		<e:Image verticalCenter="0" left="0" right="0" scale9Grid="27,4,167,70" source="Button1_png" top="0" bottom="0"/>
+		<e:Label text="购买经典卡包" horizontalCenter="0" verticalCenter="0" size="100" textColor="0x000000" fontFamily="Arial"/>
+	</e:Group>
+	<e:Group id="CardBox" width="1800" height="800" horizontalCenter="0" verticalCenter="0" visible="false">
+		<e:Image source="BoxTop_png" scaleX="1" scaleY="1" anchorOffsetX="0" anchorOffsetY="0" right="0" left="0" top="0" bottom="0"/>
+		<ns1:CardView id="card_1" width="196" height="280" skinName="CardSkin" top="120" left="100" scaleX="1.5" scaleY="1.5"/>
+		<ns1:CardView id="card_2" width="196" height="280" skinName="CardSkin" top="120" left="425" scaleX="1.5" scaleY="1.5"/>
+		<ns1:CardView id="card_3" width="196" height="280" skinName="CardSkin" top="120" left="750" scaleX="1.5" scaleY="1.5"/>
+		<ns1:CardView id="card_4" width="196" height="280" skinName="CardSkin" top="120" left="1075" scaleX="1.5" scaleY="1.5"/>
+		<ns1:CardView id="card_5" width="196" height="280" skinName="CardSkin" top="120" left="1400" scaleX="1.5" scaleY="1.5"/>
+		<e:Group id="sure" width="383" height="140" horizontalCenter="0" verticalCenter="230">
+			<e:Image source="Button1_png" horizontalCenter="0" verticalCenter="0"/>
+			<e:Label text="确认" horizontalCenter="0" verticalCenter="0" size="100" fontFamily="SimHei" textColor="0x000000"/>
+		</e:Group>
+	</e:Group>
+	<e:Group id="tishi" width="1600" height="600" horizontalCenter="0" verticalCenter="0" visible="false">
+		<e:Image source="Background_png" left="0" right="0" top="0" bottom="0"/>
+		<e:Label text="金币不足" horizontalCenter="0" verticalCenter="0" size="250"/>
+	</e:Group>
+	<e:Group id="back" width="120" height="100" left="80" top="50">
+		<e:Image source="BACK_png" scaleX="1" scaleY="1" left="0" right="0" top="0" bottom="0"/>
+	</e:Group>
+</e:Skin>

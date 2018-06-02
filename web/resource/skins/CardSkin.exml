@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="CardSkin" width="196" height="280" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:tween="egret.tween.*" >
+	<w:Declarations>
+	</w:Declarations>
+	<e:Group id="CardGroup" scaleX="0.4" scaleY="0.4" anchorOffsetX="0" anchorOffsetY="0" width="490" x="0" height="700" y="0">
+		<e:Image source="base_png" anchorOffsetX="0" width="477" anchorOffsetY="0" height="694" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0"/>
+		<e:Image id="CardIcon" width="500" height="500" horizontalCenter="0.5" verticalCenter="-100" x="34" y="35" scaleX="1" scaleY="1" source="40101_a_png"/>
+		<e:Image source="Card_png" scaleX="1" scaleY="1" width="567" height="770" horizontalCenter="0" verticalCenter="0"/>
+		<e:Image source="IconSword_png" scaleX="2" scaleY="2" left="25" bottom="20" x="60" y="626"/>
+		<e:Image source="IconShield_png" scaleX="2" scaleY="2" right="20" bottom="25" x="447" y="630"/>
+		<e:Label id="Name" text="呜啦啦" size="60" horizontalCenter="0" verticalCenter="5" textColor="0x000000" bold="true" verticalAlign="middle" textAlign="center" fontFamily="KaiTi" x="131" y="360" scaleX="1" scaleY="1"/>
+		<e:Label id="Rank" text="1" size="70" right="33" top="2" verticalAlign="middle" textAlign="center" x="457" y="43" scaleX="1" scaleY="1"/>
+		<e:Label id="Attack" text="0" size="80" left="90" bottom="20" x="124" y="624" scaleX="1" scaleY="1" textAlign="left"/>
+		<e:Label id="HP" text="1" size="80" bottom="20" right="90" width="89" x="354" y="624" scaleX="1" scaleY="1" textAlign="right"/>
+		<e:Label id="Skill" text="" horizontalCenter="0" verticalCenter="130" width="414" height="154" size="50" textColor="0xffffff"/>
+	</e:Group>
+</e:Skin>
