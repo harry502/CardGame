@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "bg_loding_png,10101_a_png,10201_a_png,10401_a_png,10601_a_png,20101_a_png,20201_a_png,30102_a_png,30401_a_png,30502_a_png,30601_a_png,40101_a_png,AvatarBottom_png,AvatarTop_png,Background_png,BackgroundPlayerTop_png,banner_advance_yell_png,base_png,block01_png,Border_png,BoxTop_png,btn_back_orangel_up_png,Button_png,Button1_png,Card_png,Card.png_meta,Glow.png_meta,IconShield_png,IconShield.png_meta,IconSword_png,IconSword.png_meta,Shield.png_meta,Skull.png_meta,Sword.png_meta,card_bg_png,GameName_png,gamestart_png,icon_cocupation_bg_png,rank_png,bg5_png,Loginbg_jpg,blade03_png,EventBG_16_png,cions01_png",
+			"keys": "bg_loding_png,10101_a_png,10201_a_png,10401_a_png,10601_a_png,20101_a_png,20201_a_png,30102_a_png,30401_a_png,30502_a_png,30601_a_png,40101_a_png,AvatarBottom_png,AvatarTop_png,Background_png,BackgroundPlayerTop_png,banner_advance_yell_png,base_png,block01_png,Border_png,BoxTop_png,btn_back_orangel_up_png,Button_png,Button1_png,Card_png,Card.png_meta,Glow.png_meta,IconShield_png,IconShield.png_meta,IconSword_png,IconSword.png_meta,Shield.png_meta,Skull.png_meta,Sword.png_meta,card_bg_png,GameName_png,gamestart_png,icon_cocupation_bg_png,rank_png,bg5_png,Loginbg_jpg,blade03_png,EventBG_16_png,cions01_png,BACK_png,ground_png",
 			"name": "game"
 		},
 		{
@@ -274,6 +274,16 @@
 			"url": "images/UI/cions01.png",
 			"type": "image",
 			"name": "cions01_png"
+		},
+		{
+			"url": "images/UI/BACK.png",
+			"type": "image",
+			"name": "BACK_png"
+		},
+		{
+			"url": "images/UI/ground.png",
+			"type": "image",
+			"name": "ground_png"
 		}
 	]
 }

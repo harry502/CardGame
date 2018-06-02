@@ -56,7 +56,7 @@ class UserController extends ActiveController
                 return array_values($model->getFirstErrors())[0];
             } else {
                 return [
-                    'userid' => $model->userid,
+                    'userid' => $model,
                     'status' => 200,
                     'Mark' => '登录成功'
                 ];
@@ -103,12 +103,129 @@ class UserController extends ActiveController
             ];
         }
     }
-/*
-    public function actionUpdate()//更新账号
-    {
 
+    public function actionGetdeck()//获取卡组
+    {
+        $modelClass = $this->modelClass;
+        $model = $modelClass::find()->where(['userid' => $_POST['userid']])->one();
+
+        if($model == null)
+        {
+            return [
+                'status' => 201,
+                'Mark' => 'UserId错误'
+            ];
+        }
+        else
+        {
+            return [
+                'status' => 200,
+                'Mark' => '获取成功',
+                'deck' => $model->decklist
+            ];
+        }
     }
-*/
+
+    public function actionSetdeck()//保存卡组
+    {
+        $modelClass = $this->modelClass;
+        $model = $modelClass::find()->where(['userid' => $_POST['userid']])->one();
+
+        if($model == null)
+        {
+            return [
+                'status' => 201,
+                'Mark' => 'UserId错误'
+            ];
+        }
+        else
+        {
+            $model->decklist = $_POST['decklist'];
+            if (!$model->save()) {
+                return array_values($model->getFirstErrors())[0];
+            } else {
+                return [
+                    'status' => 200,
+                    'Mark' => '更新成功'
+                ];
+            }
+        }
+    }
+
+    public function actionGetcard()//获取卡组
+    {
+        $modelClass = $this->modelClass;
+        $model = $modelClass::find()->where(['userid' => $_POST['userid']])->one();
+
+        if($model == null)
+        {
+            return [
+                'status' => 201,
+                'Mark' => 'UserId错误'
+            ];
+        }
+        else
+        {
+            return [
+                'status' => 200,
+                'Mark' => '获取成功',
+                'card' => $model->cardlist
+            ];
+        }
+    }
+
+    public function actionSetcard()//保存卡牌列表
+    {
+        $modelClass = $this->modelClass;
+        $model = $modelClass::find()->where(['userid' => $_POST['userid']])->one();
+
+        if($model == null)
+        {
+            return [
+                'status' => 201,
+                'Mark' => 'UserId错误'
+            ];
+        }
+        else
+        {
+            $model->owncardlist = $_POST['cardlist'];
+            if (!$model->save()) {
+                return array_values($model->getFirstErrors())[0];
+            } else {
+                return [
+                    'status' => 200,
+                    'Mark' => '更新成功'
+                ];
+            }
+        }
+    }
+
+    public function actionUsecoin()//花费金币
+    {
+        $modelClass = $this->modelClass;
+        $model = $modelClass::find()->where(['userid' => $_POST['userid']])->one();
+
+        if($model == null)
+        {
+            return [
+                'status' => 201,
+                'Mark' => 'UserId错误'
+            ];
+        }
+        else
+        {
+            $model->wealth -= $_POST['cost'];
+            if (!$model->save()) {
+                return array_values($model->getFirstErrors())[0];
+            } else {
+                return [
+                    'status' => 200,
+                    'Mark' => '扣费成功'
+                ];
+            }
+        }
+    }
+
     protected function createToken($username,$password)
     {
         $token=$username.$password;

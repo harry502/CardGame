@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ShowCardSkin" width="196" height="320" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing">
+	<ns1:CardView id="card" x="0" y="0" skinName="CardSkin"/>
+	<e:Label id="number" text="X2" horizontalCenter="0" bottom="0" size="40"/>
+</e:Skin>

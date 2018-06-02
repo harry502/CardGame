@@ -1,8 +1,7 @@
-
 class MainMenuView extends core.UIView {
 
 	private NormalGame:eui.Group;
-	private RankGame:eui.Group;
+	private Shop:eui.Group;
 	private MyDeck:eui.Group;
 	private WaitGroup:eui.Group;
 
@@ -28,6 +27,12 @@ class MainMenuView extends core.UIView {
 			BattleConnect.getInst().bind();
 			BattleConnect.getInst().start();
 			//GameViewControl.getInst().LoadView(ViewList.battle);
+		},this);
+		this.Shop.addEventListener(egret.TouchEvent.TOUCH_BEGIN,()=>{
+			GameViewControl.getInst().LoadView(ViewList.shop);
+		},this);
+		this.MyDeck.addEventListener(egret.TouchEvent.TOUCH_BEGIN,()=>{
+			GameViewControl.getInst().LoadView(ViewList.MyDeck);
 		},this);
 	}
 

@@ -48,6 +48,7 @@ class BattleView extends core.UIView {
     private Mystatus:Playerstatus;
     private Timer:egret.Timer;
     private MyBlocks:eui.Image[] = new Array<eui.Image>();
+    private MyDeck:number[];
 
 
 	public constructor() {
@@ -59,6 +60,7 @@ class BattleView extends core.UIView {
 		this.addAllListener();
         this.init();
         this.Mystatus = Playerstatus.Stop;
+        this.MyDeck = DeckManager.getInst().getDeck().slice(0);
 
         this.Timer = new egret.Timer(1000,60);
         this.Timer.addEventListener(egret.TimerEvent.TIMER,()=>{
@@ -148,6 +150,7 @@ class BattleView extends core.UIView {
                     cardView.y = pos.y;
                     this.MyBattleCard[i] = cardView;
                     this.HandCard.splice(this.HandCard.indexOf(cardView),1);
+                    this.MyHandNum.text = String(Number(this.MyHandNum.text) - 1);
 
                     //网络请求，召唤卡片
                     var data = {};
@@ -190,8 +193,8 @@ class BattleView extends core.UIView {
                 this.TishiGroup.visible = false;
                 this.Mystatus = Playerstatus.EnemyTurn;
                 this.AddPower("Enemy");
-                this.MyCardNum.text = String( Number(this.MyCardNum.text) - 1 );
-                this.MyHandNum.text = String(Config.StartHandNum + 1);
+                this.EnemyCardNum.text = String( Number(this.MyCardNum.text) - 1 );
+                this.EnemyHandNum.text = String(Config.StartHandNum + 1);
                 this.Timer.start();
             },this,3000)
         }
@@ -217,7 +220,9 @@ class BattleView extends core.UIView {
             var card = new CardView();
             this.GameGroup.addChild(card);
             this.addHandListener(card);
-            card.init( Math.floor(Math.random() * Cardinfo.getInst().GetCardslength()) );
+            var temp = Math.floor(Math.random() * this.MyDeck.length);
+            card.init( this.MyDeck[temp] );
+            this.MyDeck.splice(temp,1);
             this.HandCard.push(card);
             this.UpdateHandCard();
             this.MyCardNum.text = String( Number(this.MyCardNum.text) - 1 );
@@ -325,12 +330,15 @@ class BattleView extends core.UIView {
                         this.HurtPlayer("Enemy",this.MyBattleCard[i].GetAttack());
                     }
                 },this,300);
-
             }
         }
 
         //TODO 网络请求，下一回合
         egret.setTimeout(()=>{
+            if(this.Mystatus == Playerstatus.End)
+            {
+                return;
+            }
             this.Mystatus = Playerstatus.Stop;
             this.EnemyTurn();
         },this,500);
@@ -339,7 +347,11 @@ class BattleView extends core.UIView {
     }
 
     public EnemyTurn()
-    {   
+    {
+        if(this.Mystatus == Playerstatus.End)
+        {
+            return ;
+        }
         this.MyTimeGroup.visible = false;
         this.EnemyTimeGroup.visible = true;
         this.ExitTurnGroup.visible = false;
@@ -355,6 +367,7 @@ class BattleView extends core.UIView {
         {
             var data = {};
             ALISDK.CatcherSDK.instance().sendJson({function:"gameover",params:data});
+            return;
         }
 
 
@@ -383,15 +396,14 @@ class BattleView extends core.UIView {
 
     public EnemyNextTurn()
     {
-        if(this.Mystatus == Playerstatus.End)
-        {
-            return;
-        }
-
         this.Mystatus = Playerstatus.Battle;
         this.EnemyBattleTurn();
 
         egret.setTimeout(()=>{
+            if(this.Mystatus == Playerstatus.End)
+            {
+                return;
+            }
             this.MyTurn()
         },this,500);
     }
@@ -465,6 +477,7 @@ class BattleView extends core.UIView {
         var cardView = new CardView();
         this.GameGroup.addChild(cardView);
         cardView.init(CardId);
+        this.EnemyHandNum.text = String(Number(this.EnemyHandNum.text) - 1);
         if(Block_num == 0)
         {
             cardView.CanTouch = false;

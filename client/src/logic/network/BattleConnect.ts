@@ -41,11 +41,6 @@ class BattleConnect
         return BattleConnect.inst;
     }
 
-    public bindBattleView(Control:BattleViewControl):void
-    {
-        this.Control = Control;
-    }
-
     public bind():void
     {	
         let self = this;
@@ -120,14 +115,6 @@ class BattleConnect
     {
         ALISDK.CatcherSDK.instance().start();
         ALISDK.CatcherSDK.instance().updateProgress(ALISDK.CatcherSDK.ProgressState.COMPLETED);
-
-        egret.setTimeout(()=>{
-            if(this.isGameReady == false)
-            {
-                ALISDK.CatcherSDK.instance().end();
-                this.start();
-            }
-        },this,12000);
     }
 
     public end():void
@@ -143,5 +130,10 @@ class BattleConnect
             gameId: '1231231',
             gameVersion: "0.0.1",
         });
+    }
+
+    public bindBattleView(Control:BattleViewControl):void
+    {
+        this.Control = Control;
     }
 }

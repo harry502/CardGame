@@ -15,6 +15,7 @@ class LoginView extends core.UIView {
 	public open()
 	{
 		this.addAllListener();
+		this.password.inputType = egret.TextFieldInputType.PASSWORD;
 	}
 
 	public destroy()
@@ -56,18 +57,19 @@ class LoginView extends core.UIView {
 	{
 		this.Mark.text = params.Mark;
 		console.log(params.Mark,params.status);
-		
 		if(params.status == 200 && params.Mark == "登录成功")
 		{
-			this.LoginSuccess(params.id);
+			this.LoginSuccess(params.userid);
 		}
 	}
 
-	public LoginSuccess(userid:number)
+	public LoginSuccess(user:any)
 	{
-		Userinfo.getInst().userid = userid;
-		Userinfo.getInst().userName = this.account.text;
-		
+		Userinfo.getInst().userid = user.userid;
+		Userinfo.getInst().userName = user.username;
+		Userinfo.getInst().coins = user.wealth;
+		DeckManager.getInst().setDeckbyStr(user.decklist);
+		CardManager.getInst().setList(user.owncardlist);
 		GameViewControl.getInst().LoadView(ViewList.Main);
 	}
 }

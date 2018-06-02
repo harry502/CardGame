@@ -13,6 +13,7 @@ class Userinfo
     userName:string;
     score:number;
     GameNum:number;
+    coins:number;
 }
 
 interface CardData

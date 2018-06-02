@@ -3,7 +3,9 @@ enum ViewList
 {
 	login=0,
 	Main=1,
-	battle=2
+	battle=2,
+	shop=3,
+	MyDeck=4
 }
 
 class GameViewControl{
@@ -35,6 +37,15 @@ class GameViewControl{
 			case ViewList.battle :
 				core.PageManage.getInstance().addViewControl(BattleViewControl, core.ViewLayerType.SceneLayer,
 							 core.RemoveViewType.RemoveBefore);
+				break;
+			case ViewList.shop :
+				core.PageManage.getInstance().addViewControl(ShopViewControl, core.ViewLayerType.SceneLayer,
+							 core.RemoveViewType.RemoveBefore);
+				break;
+			case ViewList.MyDeck :
+				core.PageManage.getInstance().addViewControl(MyDeckViewControl, core.ViewLayerType.SceneLayer,
+							 core.RemoveViewType.RemoveBefore);
+				break;
 		}
 	}
 

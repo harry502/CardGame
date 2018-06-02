@@ -20,9 +20,11 @@ class User extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['score', 'gamenum'],'integer'],
+            [['score', 'gamenum','wealth'],'integer'],
             [['username'],'string', 'max' => 20],
             [['password'],'string', 'max' => 32],
+            [['decklist'],'string', 'max' => 1024],
+            [['owncardlist'],'string', 'max' => 1024],
         ];
     }
     /**
@@ -36,7 +38,9 @@ class User extends \yii\db\ActiveRecord
             'score' => 'Score',
             'password' => 'Password',
             'gamenum' => 'Game Num',
-            'icon' => 'icon'
+            'wealth' => 'Wealth',
+            'decklist' => 'Deck List',
+            'owncardlist' => 'Own Card List',
         ];
     }
     public function fields()
@@ -45,9 +49,10 @@ class User extends \yii\db\ActiveRecord
             'userid',
             'username',
             'score',
-            'password',
             'gamenum',
-            'icon'
+            'wealth',
+            'decklist',
+            'owncardlist',
         ];
     }
 }

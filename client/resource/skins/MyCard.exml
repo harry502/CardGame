@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="MyCard" width="1920" height="1080" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Image source="bg_loding_png" left="0" right="0" top="0" bottom="0"/>
+	<e:Group width="500" height="100" x="1402.24" y="10">
+		<e:Image source="banner_advance_yell_png" x="0" y="0" height="106.06" width="500" anchorOffsetY="0" scale9Grid="73,9,270,35"/>
+		<e:Label text="我的卡组" size="70" textColor="0x000000" bold="true" horizontalCenter="0" verticalCenter="0"/>
+	</e:Group>
+	<e:Group width="700" height="150" top="20" left="350">
+		<e:Image source="banner_advance_yell_png" x="0" y="0" height="150" width="700" anchorOffsetY="0" scale9Grid="73,9,270,35"/>
+		<e:Label text="我的收藏" size="120" textColor="0x000000" bold="true" horizontalCenter="0" verticalCenter="-9"/>
+	</e:Group>
+	<e:Group id="DeckGroup" width="620.6" height="1051.09" anchorOffsetY="0" anchorOffsetX="0" right="-39" bottom="-40">
+		<e:Image source="BoxTop_png" anchorOffsetX="0" anchorOffsetY="0" right="0" top="0" scaleX="1" scaleY="1" left="0" bottom="0" scale9Grid="118,111,1714,333"/>
+		<e:Scroller width="483.33" height="908.72" y="69.64" anchorOffsetX="0" anchorOffsetY="0" x="68.64" scrollPolicyH="off" scrollPolicyV="auto" scaleX="1" scaleY="1">
+			<e:Group id="DeckBox" anchorOffsetY="0"/>
+		</e:Scroller>
+	</e:Group>
+	<e:Group width="1360.61" height="772.73" anchorOffsetX="0" left="0" top="132" anchorOffsetY="0">
+		<e:Image source="BoxTop_png" anchorOffsetX="0" anchorOffsetY="0" scale9Grid="104,87,1745,410" scaleX="1" scaleY="1" left="0" right="0" top="0" bottom="0"/>
+		<e:Scroller width="1218.85" height="640" y="68" anchorOffsetX="0" anchorOffsetY="0" x="70" scrollPolicyH="auto" scrollPolicyV="off" scaleX="1" scaleY="1">
+			<e:Group id="CardBox" anchorOffsetY="0" anchorOffsetX="0" x="-548" y="0">
+			</e:Group>
+		</e:Scroller>
+	</e:Group>
+	<e:Image id="back" source="BACK_png" width="120" height="125" left="30" top="20" anchorOffsetX="0"/>
+	<e:Group id="SaveDeck" width="400" height="100" left="476" bottom="53">
+		<e:Image x="0" y="0" height="100" width="400" anchorOffsetY="0" source="btn_back_orangel_up_png" scale9Grid="27,14,169,51"/>
+		<e:Label text="保存卡组" size="75" textColor="0x000000" bold="true" horizontalCenter="0" verticalCenter="0"/>
+	</e:Group>
+	<e:Group id="tishiGroup" width="1600" height="400" horizontalCenter="0" verticalCenter="0" visible="false">
+		<e:Image source="Background_png" left="0" right="0" top="0" bottom="0" scale9Grid="39,21,244,43"/>
+		<e:Label id="tishi" text="卡组不足20张" horizontalCenter="0" verticalCenter="0" size="250"/>
+	</e:Group>
+</e:Skin>
