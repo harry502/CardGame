@@ -41,10 +41,10 @@ class MyDeckView extends core.UIView {
 
 	private addAllListener()
 	{
-		this.back.addEventListener(egret.TouchEvent.TOUCH_END,()=>{
+		this.back.addEventListener(egret.TouchEvent.TOUCH_BEGIN,()=>{
 			GameViewControl.getInst().LoadView(ViewList.Main);
 		},this);
-		this.SaveDeck.addEventListener(egret.TouchEvent.TOUCH_END,()=>{
+		this.SaveDeck.addEventListener(egret.TouchEvent.TOUCH_BEGIN,()=>{
 			if(this.DeckNum <20)
 			{
 				this.tishiGroup.visible = true;

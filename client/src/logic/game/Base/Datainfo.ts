@@ -21,7 +21,7 @@ interface CardData
     CardId:number;
     Name:string;
     Skill:string;
-    Rank:number;
+    Cost:number;
     Attack:number;
     HP:number;
     IconUrl:string;

@@ -18,7 +18,7 @@ namespace Config {
     /** 每回合获得的能量数 */
     export const everyTurnPower:number = 5;
     /** 已投入使用的最大卡牌种类的数量 */
-    export const CardsNumber:number = 10;
+    export const CardsNumber:number = 20;
     /** 已设定好的最大卡牌种类的数量 */
     export const MaxCardsId:number = 20;
     /** 买一包卡牌所需的花费 */

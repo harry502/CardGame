@@ -132,7 +132,7 @@ class BattleView extends core.UIView {
             {
                 if(this.MyBlocks[i].hitTestPoint(evt.stageX,evt.stageY) && this.MyBattleCard[i] == null)
                 {
-                    if(this.UsePower("Me",cardView.Card.Rank) == false)
+                    if(this.UsePower("Me",cardView.Card.Cost) == false)
                     {
                         this.TishiGroup.visible = true;
                         this.Tishi.text = "能量不足";
@@ -468,7 +468,7 @@ class BattleView extends core.UIView {
             return;
         }
 
-        if(this.UsePower("Enemy",Cardinfo.getInst().GetCardInfo(CardId).Rank ) == false)
+        if(this.UsePower("Enemy",Cardinfo.getInst().GetCardInfo(CardId).Cost ) == false)
         {
             console.error("对手法力值无法召唤");
             return;

@@ -9,9 +9,9 @@
 		<e:Image source="IconSword_png" scaleX="2" scaleY="2" left="25" bottom="20" x="60" y="626"/>
 		<e:Image source="IconShield_png" scaleX="2" scaleY="2" right="20" bottom="25" x="447" y="630"/>
 		<e:Label id="Name" text="呜啦啦" size="60" horizontalCenter="0" verticalCenter="5" textColor="0x000000" bold="true" verticalAlign="middle" textAlign="center" fontFamily="KaiTi" x="131" y="360" scaleX="1" scaleY="1"/>
-		<e:Label id="Rank" text="1" size="70" right="33" top="2" verticalAlign="middle" textAlign="center" x="457" y="43" scaleX="1" scaleY="1"/>
-		<e:Label id="Attack" text="0" size="80" left="90" bottom="20" x="124" y="624" scaleX="1" scaleY="1" textAlign="left"/>
-		<e:Label id="HP" text="1" size="80" bottom="20" right="90" width="89" x="354" y="624" scaleX="1" scaleY="1" textAlign="right"/>
+		<e:Label id="Cost" text="9" size="60" right="19" top="11" verticalAlign="middle" textAlign="center" x="457" y="43" scaleX="1" scaleY="1" width="67" height="60"/>
+		<e:Label id="Attack" text="1" size="80" left="90" bottom="20" x="124" y="624" scaleX="1" scaleY="1" textAlign="left" width="90" height="80" verticalAlign="middle"/>
+		<e:Label id="HP" text="1" size="80" bottom="20" right="90" width="90" x="354" y="624" scaleX="1" scaleY="1" textAlign="right" height="80" verticalAlign="middle"/>
 		<e:Label id="Skill" text="" horizontalCenter="0" verticalCenter="130" width="414" height="154" size="50" textColor="0xffffff"/>
 	</e:Group>
 </e:Skin>

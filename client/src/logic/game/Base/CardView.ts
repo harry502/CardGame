@@ -4,7 +4,7 @@ class CardView extends eui.Component
     public CardIcon:eui.Image;
     public Skill:eui.Label;
     public Name:eui.Label;
-    public Rank:eui.Label;
+    public Cost:eui.Label;
     public Attack:eui.Label;
     public HP:eui.Label;
     public Card:CardData;
@@ -22,7 +22,7 @@ class CardView extends eui.Component
         this.CardIcon.texture = RES.getRes(this.Card.IconUrl);
         this.Skill.text = this.Card.Skill;
         this.Name.text = this.Card.Name;
-        this.Rank.text = String(this.Card.Rank);
+        this.Cost.text = String(this.Card.Cost);
         this.Attack.text = String(this.Card.Attack);
         this.HP.text = String(this.Card.HP);
         this.CanTouch = true;
@@ -62,7 +62,7 @@ class CardView extends eui.Component
 
     public GetRank()
     {
-        return Number(this.Rank.text);
+        return Number(this.Cost.text);
     }
 
 }
