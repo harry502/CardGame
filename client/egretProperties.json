@@ -22,13 +22,7 @@
 			"name": "eui"
 		},
 		{
-			"name": "dragonBones"
-		},
-		{
 			"name": "socket"
-		},
-		{
-			"name": "promise"
 		},
 		{
 			"name": "catcherSDK",
