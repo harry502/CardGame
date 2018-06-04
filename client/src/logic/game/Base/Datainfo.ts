@@ -25,6 +25,7 @@ interface CardData
     Attack:number;
     HP:number;
     IconUrl:string;
+    Sound:string;
 }
 
 class Cardinfo

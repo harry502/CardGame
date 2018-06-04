@@ -7,6 +7,10 @@
 		{
 			"keys": "netconfig_json,CardConfig_json,CardGame1_json,CardGame_bg_json",
 			"name": "loading"
+		},
+		{
+			"keys": "BGM_Battle_m4a,BGM_Main_m4a,BGM_TITLE_m4a,dengchang_00_m4a,dengchang_01_m4a,dengchang_02_m4a,dengchang_03_m4a,dengchang_04_m4a,dengchang_05_m4a,dengchang_06_m4a,dengchang_07_m4a,dengchang_08_m4a,dengchang_09_m4a,dengchang_10_m4a,dengchang_11_m4a,dengchang_12_m4a,dengchang_13_m4a,dengchang_14_m4a,dengchang_15_m4a,dengchang_16_m4a,dengchang_17_m4a,dengchang_18_m4a,dengchang_19_m4a,fail_m4a,win_m4a",
+			"name": "sound"
 		}
 	],
 	"resources": [
@@ -88,6 +92,136 @@
 			"type": "sheet",
 			"name": "CardGame3_json",
 			"subkeys": "208_a_png,30203_a_png,30504_a_png,30601_a_png,40104_a_png,40106_a_png,40501_a_png,40604_a_png,50401_a_png,50502_a_png"
+		},
+		{
+			"url": "skins/ShowCardSkin.exml",
+			"type": "bin",
+			"name": "ShowCardSkin_exml"
+		},
+		{
+			"url": "sound/BGM_Battle.m4a",
+			"type": "sound",
+			"name": "BGM_Battle_m4a"
+		},
+		{
+			"url": "sound/BGM_Main.m4a",
+			"type": "sound",
+			"name": "BGM_Main_m4a"
+		},
+		{
+			"url": "sound/BGM_TITLE.m4a",
+			"type": "sound",
+			"name": "BGM_TITLE_m4a"
+		},
+		{
+			"url": "sound/dengchang_00.m4a",
+			"type": "sound",
+			"name": "dengchang_00_m4a"
+		},
+		{
+			"url": "sound/dengchang_01.m4a",
+			"type": "sound",
+			"name": "dengchang_01_m4a"
+		},
+		{
+			"url": "sound/dengchang_02.m4a",
+			"type": "sound",
+			"name": "dengchang_02_m4a"
+		},
+		{
+			"url": "sound/dengchang_03.m4a",
+			"type": "sound",
+			"name": "dengchang_03_m4a"
+		},
+		{
+			"url": "sound/dengchang_04.m4a",
+			"type": "sound",
+			"name": "dengchang_04_m4a"
+		},
+		{
+			"url": "sound/dengchang_05.m4a",
+			"type": "sound",
+			"name": "dengchang_05_m4a"
+		},
+		{
+			"url": "sound/dengchang_06.m4a",
+			"type": "sound",
+			"name": "dengchang_06_m4a"
+		},
+		{
+			"url": "sound/dengchang_07.m4a",
+			"type": "sound",
+			"name": "dengchang_07_m4a"
+		},
+		{
+			"url": "sound/dengchang_08.m4a",
+			"type": "sound",
+			"name": "dengchang_08_m4a"
+		},
+		{
+			"url": "sound/dengchang_09.m4a",
+			"type": "sound",
+			"name": "dengchang_09_m4a"
+		},
+		{
+			"url": "sound/dengchang_10.m4a",
+			"type": "sound",
+			"name": "dengchang_10_m4a"
+		},
+		{
+			"url": "sound/dengchang_11.m4a",
+			"type": "sound",
+			"name": "dengchang_11_m4a"
+		},
+		{
+			"url": "sound/dengchang_12.m4a",
+			"type": "sound",
+			"name": "dengchang_12_m4a"
+		},
+		{
+			"url": "sound/dengchang_13.m4a",
+			"type": "sound",
+			"name": "dengchang_13_m4a"
+		},
+		{
+			"url": "sound/dengchang_14.m4a",
+			"type": "sound",
+			"name": "dengchang_14_m4a"
+		},
+		{
+			"url": "sound/dengchang_15.m4a",
+			"type": "sound",
+			"name": "dengchang_15_m4a"
+		},
+		{
+			"url": "sound/dengchang_16.m4a",
+			"type": "sound",
+			"name": "dengchang_16_m4a"
+		},
+		{
+			"url": "sound/dengchang_17.m4a",
+			"type": "sound",
+			"name": "dengchang_17_m4a"
+		},
+		{
+			"url": "sound/dengchang_18.m4a",
+			"type": "sound",
+			"name": "dengchang_18_m4a"
+		},
+		{
+			"url": "sound/dengchang_19.m4a",
+			"type": "sound",
+			"name": "dengchang_19_m4a"
+		},
+		{
+			"url": "sound/fail.m4a",
+			"type": "sound",
+			"name": "fail_m4a"
+		},
+		{
+			"url": "sound/win.m4a",
+			"type": "sound",
+			"name": "win_m4a"
 		}
 	]
 }

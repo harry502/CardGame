@@ -7,7 +7,8 @@
             "Cost" : "1",
             "Attack" : "0",
             "HP" : "5",
-            "IconUrl" : "208_a_png"
+            "IconUrl" : "208_a_png",
+            "Sound" : "dengchang_00_m4a"
         },
         {
             "CardId" : "1",
@@ -16,7 +17,8 @@
             "Cost" : "2",
             "Attack" : "2",
             "HP" : "5",
-            "IconUrl" : "10101_a_png"
+            "IconUrl" : "10101_a_png",
+            "Sound" : "dengchang_01_m4a"
         },
         {
             "CardId" : "2",
@@ -25,7 +27,8 @@
             "Cost" : "2",
             "Attack" : "4",
             "HP" : "2",
-            "IconUrl" : "10201_a_png"
+            "IconUrl" : "10201_a_png",
+            "Sound" : "dengchang_02_m4a"
         },
         {
             "CardId" : "3",
@@ -34,7 +37,8 @@
             "Cost" : "3",
             "Attack" : "5",
             "HP" : "2",
-            "IconUrl" : "10401_a_png"
+            "IconUrl" : "10401_a_png",
+            "Sound" : "dengchang_03_m4a"
         },
         {
             "CardId" : "4",
@@ -43,7 +47,8 @@
             "Cost" : "3",
             "Attack" : "3",
             "HP" : "4",
-            "IconUrl" : "10601_a_png"
+            "IconUrl" : "10601_a_png",
+            "Sound" : "dengchang_04_m4a"
         },
         {
             "CardId" : "5",
@@ -52,7 +57,8 @@
             "Cost" : "4",
             "Attack" : "3",
             "HP" : "6",
-            "IconUrl" : "20101_a_png"
+            "IconUrl" : "20101_a_png",
+            "Sound" : "dengchang_05_m4a"
         },
         {
             "CardId" : "6",
@@ -61,7 +67,8 @@
             "Cost" : "4",
             "Attack" : "6",
             "HP" : "2",
-            "IconUrl" : "40106_a_png"
+            "IconUrl" : "40106_a_png",
+            "Sound" : "dengchang_06_m4a"
         },
         {
             "CardId" : "7",
@@ -70,7 +77,8 @@
             "Cost" : "5",
             "Attack" : "6",
             "HP" : "5",
-            "IconUrl" : "20201_a_png"
+            "IconUrl" : "20201_a_png",
+            "Sound" : "dengchang_07_m4a"
         },
         {
             "CardId" : "8",
@@ -79,7 +87,8 @@
             "Cost" : "5",
             "Attack" : "8",
             "HP" : "2",
-            "IconUrl" : "30401_a_png"
+            "IconUrl" : "30401_a_png",
+            "Sound" : "dengchang_08_m4a"
         },
         {
             "CardId" : "9",
@@ -88,7 +97,8 @@
             "Cost" : "6",
             "Attack" : "5",
             "HP" : "8",
-            "IconUrl" : "30102_a_png"
+            "IconUrl" : "30102_a_png",
+            "Sound" : "dengchang_09_m4a"
         },
         {
             "CardId" : "10",
@@ -97,7 +107,8 @@
             "Cost" : "6",
             "Attack" : "8",
             "HP" : "5",
-            "IconUrl" : "30203_a_png"
+            "IconUrl" : "30203_a_png",
+            "Sound" : "dengchang_10_m4a"
         },
         {
             "CardId" : "11",
@@ -106,7 +117,8 @@
             "Cost" : "7",
             "Attack" : "6",
             "HP" : "14",
-            "IconUrl" : "30502_a_png"
+            "IconUrl" : "30502_a_png",
+            "Sound" : "dengchang_11_m4a"
         },
         {
             "CardId" : "12",
@@ -115,16 +127,18 @@
             "Cost" : "7",
             "Attack" : "12",
             "HP" : "5",
-            "IconUrl" : "30601_a_png"
+            "IconUrl" : "30601_a_png",
+            "Sound" : "dengchang_12_m4a"
         },
         {
             "CardId" : "13",
-            "Name" : "卡萌",
-            "Skill" : "卡迪的姐姐，智慧与美貌并存的猫耳族首领",
+            "Name" : "卡莉",
+            "Skill" : "卡密和卡迪的姐姐，智慧与美貌并存的猫耳族首领",
             "Cost" : "8",
             "Attack" : "8",
             "HP" : "13",
-            "IconUrl" : "40104_a_png"
+            "IconUrl" : "40104_a_png",
+            "Sound" : "dengchang_13_m4a"
         },
         {
             "CardId" : "14",
@@ -133,7 +147,8 @@
             "Cost" : "8",
             "Attack" : "2",
             "HP" : "20",
-            "IconUrl" : "30504_a_png"
+            "IconUrl" : "30504_a_png",
+            "Sound" : "dengchang_14_m4a"
         },
         {
             "CardId" : "15",
@@ -142,16 +157,18 @@
             "Cost" : "9",
             "Attack" : "18",
             "HP" : "1",
-            "IconUrl" : "50401_a_png"
+            "IconUrl" : "50401_a_png",
+            "Sound" : "dengchang_15_m4a"
         },
         {
             "CardId" : "16",
-            "Name" : "女神",
-            "Skill" : "女神的光辉照耀着大地",
+            "Name" : "女王",
+            "Skill" : "女王的光辉照耀着大地",
             "Cost" : "9",
             "Attack" : "8",
             "HP" : "12",
-            "IconUrl" : "40604_a_png"
+            "IconUrl" : "40604_a_png",
+            "Sound" : "dengchang_16_m4a"
         },
         {
             "CardId" : "17",
@@ -160,7 +177,8 @@
             "Cost" : "10",
             "Attack" : "12",
             "HP" : "12",
-            "IconUrl" : "40101_a_png"
+            "IconUrl" : "40101_a_png",
+            "Sound" : "dengchang_17_m4a"
         },
         {
             "CardId" : "18",
@@ -169,7 +187,8 @@
             "Cost" : "10",
             "Attack" : "7",
             "HP" : "16",
-            "IconUrl" : "40501_a_png"
+            "IconUrl" : "40501_a_png",
+            "Sound" : "dengchang_18_m4a"
         },
         {
             "CardId" : "19",
@@ -178,7 +197,8 @@
             "Cost" : "10",
             "Attack" : "16",
             "HP" : "7",
-            "IconUrl" : "50502_a_png"
+            "IconUrl" : "50502_a_png",
+            "Sound" : "dengchang_19_m4a"
         }
     ]
 }

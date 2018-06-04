@@ -59,6 +59,7 @@ class BattleView extends core.UIView {
 	{
 		this.addAllListener();
         this.init();
+        core.SoundManager.getInstance().playBgm("BGM_Battle_m4a");
         this.Mystatus = Playerstatus.Stop;
         this.MyDeck = DeckManager.getInst().getDeck().slice(0);
 
@@ -144,6 +145,7 @@ class BattleView extends core.UIView {
                         break;
                     }
 
+                    core.SoundManager.getInstance().playEffect(cardView.Card.Sound);
                     cardView.CanTouch = false;
                     var pos = this.MyBattleBox.localToGlobal(this.MyBlocks[i].x,this.MyBlocks[i].y);
                     cardView.x = pos.x;
@@ -519,14 +521,19 @@ class BattleView extends core.UIView {
         if(Winner == "Me")
         {
             this.Tishi.text = "获胜";
+            core.SoundManager.getInstance().stopBgm();
+            core.SoundManager.getInstance().playEffect("win_m4a");
         }
         else if(Winner == "Enemy")
         {
             this.Tishi.text = "失败";
+            core.SoundManager.getInstance().stopBgm();
+            core.SoundManager.getInstance().playEffect("fail_m4a");
         }
         else
         {
             this.Tishi.text = "平局";
+            core.SoundManager.getInstance().stopBgm();
         }
 
         egret.setTimeout(()=>{
