@@ -25,12 +25,13 @@ interface ServerMsg {
 }
 
 interface SMP_StartGame {
-    StartUserId:string
+    StartUserId:string;
 }
 
 class BattleConnect
 {
 	private isGameReady: boolean = false;
+    public isWaiting: boolean = false;
     private static inst: BattleConnect;
     private Control:BattleViewControl;
 
@@ -63,6 +64,12 @@ class BattleConnect
             })
             .on('READY', (_e) => {
                 console.log("READY",_e);
+                if(self.isWaiting)
+                {
+                    var data = {};
+                    data["userid"] = Userinfo.getInst().userid;
+                    ALISDK.CatcherSDK.instance().sendJson({function:"CheckUser",params:data});
+                }
             })
             .on('KICK', () => {
             })
@@ -82,11 +89,11 @@ class BattleConnect
             })
             .on('MESSAGE', (msg) => {
                 let sm = msg.data as ServerMsg ;
-
                 switch (sm.function) {
                     case "StartGame":
                         console.log("StartGame");
                         let gameInfo = sm.param as SMP_StartGame;
+
                         self.isGameReady = true;
                         GameViewControl.getInst().LoadView(ViewList.battle);
                         this.Control.StartGame(gameInfo.StartUserId);
@@ -98,7 +105,11 @@ class BattleConnect
                         this.Control.EnemyNextTurn();
                         break;
                     case "Result":
-                        this.Control.Result(sm.param.winner);
+                        if(this.Control)
+                        {
+                            console.log("result");
+                            this.Control.Result(sm.param.winner);
+                        }
                         break;
                     default:
                         break;

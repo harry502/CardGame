@@ -10,6 +10,7 @@ var initPlayer = function(roomId, userId, isRobot){
 	this.HP = 30;
 	this.HandNum = 0;
 	this.DeckNum = 20;
+	this.GameUserId = null;
 	
 };
 

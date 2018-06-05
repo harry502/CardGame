@@ -537,6 +537,7 @@ class BattleView extends core.UIView {
         }
 
         egret.setTimeout(()=>{
+            console.log("游戏结束");
             GameViewControl.getInst().LoadView(ViewList.Main);
             BattleConnect.getInst().end();
         },this,3000)

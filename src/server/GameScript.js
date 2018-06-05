@@ -39,7 +39,7 @@ GameScript.prototype.startGame = function(gateWayObj) {
 
 	var retData = {};
 
-	this.registerTimeOut(this, 'sendInitData', 0);
+	//this.registerTimeOut(this, 'sendInitData', 0);
 
 	return true;
 }
@@ -49,6 +49,57 @@ GameScript.prototype.sendInitData = function(){
 	//房间广播同步房间数据
 	retData.StartUserId = this.playerList[0].userId;
 	this.sendCPBroadcast("StartGame",retData);
+}
+
+GameScript.prototype.CheckUser = function(gateWayObj,userId,params){
+	console.log(params);
+	var id = params.userid;
+	var retData = {};
+
+	setTimeout(function(){
+		if(this)this.gameOver(gateWayObj, "" );
+	},10000);
+
+	if(this.playerList[0].userId == userId)
+	{
+		this.playerList[0].GameUserId = id;
+		if(this.playerList[1].GameUserId != null && this.playerList[1].GameUserId !=id )
+		{
+			console.log("确认无误");
+			var retData = {};
+			//房间广播同步房间数据
+			retData.StartUserId = this.playerList[0].userId;
+			this.sendCPBroadcast("StartGame",retData);
+		}
+		else if(this.playerList[1].GameUserId == id)
+		{
+			console.log("玩家为同一人");
+			console.log(this.playerList[0].GameUserId);
+			console.log(this.playerList[1].GameUserId);
+			console.log(id);
+			this.gameOver(gateWayObj, "" );
+		}
+	}
+	else
+	{
+		this.playerList[1].GameUserId = id;
+		if(this.playerList[0].GameUserId != null && this.playerList[0].GameUserId !=id )
+		{
+			console.log("确认无误");
+			var retData = {};
+			//房间广播同步房间数据
+			retData.StartUserId = this.playerList[0].userId;
+			this.sendCPBroadcast("StartGame",retData);
+		}
+		else if(this.playerList[0].GameUserId == id)
+		{
+			console.log("玩家为同一人");
+			console.log(this.playerList[0].GameUserId);
+			console.log(this.playerList[1].GameUserId);
+			console.log(id);
+			this.gameOver(gateWayObj, "" );
+		}
+	}
 }
 
 GameScript.prototype.summonCard = function(gateWayObj,userId,params){
@@ -86,6 +137,7 @@ GameScript.prototype.gameover = function(gateWayObj,userId,params){
 	retData.winner = userId;
 
 	this.sendCPBroadcast("Result",retData);
+	this.gameOver(gateWayObj, retData.winner );
 }
 
 //结果计算
