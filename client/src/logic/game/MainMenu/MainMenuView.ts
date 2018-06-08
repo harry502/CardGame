@@ -17,6 +17,7 @@ class MainMenuView extends core.UIView {
     public open()
 	{
 		this.addAllListener();
+		core.SoundManager.getInstance().setBgmVolume(0.05);
 		core.SoundManager.getInstance().playBgm("BGM_Main_m4a");
 	}
 

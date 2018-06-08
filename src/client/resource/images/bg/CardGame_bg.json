@@ -1,6 +1,0 @@
-{"file":"CardGame_bg.png","frames":{
-"bg_loding_png":{"x":2,"y":1034,"w":1024,"h":512,"offX":0,"offY":0,"sourceW":1024,"sourceH":512},
-"bg5_png":{"x":2,"y":518,"w":1024,"h":512,"offX":0,"offY":0,"sourceW":1024,"sourceH":512},
-"card_bg_png":{"x":2,"y":2,"w":1024,"h":512,"offX":0,"offY":0,"sourceW":1024,"sourceH":512},
-"EventBG_16_png":{"x":1030,"y":546,"w":512,"h":512,"offX":0,"offY":0,"sourceW":512,"sourceH":512},
-"Loginbg_jpg":{"x":1030,"y":2,"w":960,"h":540,"offX":0,"offY":0,"sourceW":960,"sourceH":540}}}

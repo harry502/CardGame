@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<e:Skin class="LoadingSkin" width="1920" height="1080" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-	<e:Image scaleX="1" scaleY="1" left="0" right="0" top="0" bottom="0" width="1400" source="Loginbg_jpg"/>
-	<e:Label id="t_loading" size="67" fontFamily="Microsoft YaHei" text="0%" verticalAlign="middle" textAlign="center" width="200" textColor="0xFFFFFF" lineSpacing="12" horizontalCenter="0" bottom="111" height="60" bold="true"/>
-	<e:Image source="GameName_png" top="100" horizontalCenter="60"/>
-	<e:Label text="游戏正在加载中..." size="80" horizontalCenter="0" verticalCenter="280" bold="true" textAlign="center" verticalAlign="middle"/>
-</e:Skin>

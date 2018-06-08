@@ -16,6 +16,8 @@ class LoginView extends core.UIView {
 	{
 		this.addAllListener();
 		this.password.inputType = egret.TextFieldInputType.PASSWORD;
+		core.SoundManager.getInstance().setBgmVolume(0.2);
+		core.SoundManager.getInstance().setEffectVolume(0.4);
 		core.SoundManager.getInstance().playBgm("BGM_TITLE_m4a");
 	}
 

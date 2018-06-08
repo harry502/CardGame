@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="TextInputSkin" width="800" height="80" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-	<e:Rect right="0" left="0" top="0" bottom="0"/>
-	<e:EditableText id="textDisplay" text="" left="0" right="0" top="0" bottom="0" backgroundColor="0x000000" textColor="0xffffff" verticalAlign="middle" textAlign="left" size="80"/>
-</e:Skin>

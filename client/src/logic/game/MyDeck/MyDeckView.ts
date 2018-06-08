@@ -114,7 +114,6 @@ class MyDeckView extends core.UIView {
 	private CardAddLisnter(temp:ShowCard)
 	{
 		temp.addEventListener(egret.TouchEvent.TOUCH_END,()=>{
-			core.SoundManager.getInstance().playEffect(temp.card.Card.Sound);
 			if(temp.num > 0)
 			{
 				this.AddDeck(temp.CardId);

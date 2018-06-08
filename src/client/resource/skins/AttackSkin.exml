@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="AttackSkin" width="256" height="80" xmlns:e="http://ns.egret.com/eui">
-	<e:Image width="123" x="0" anchorOffsetX="0" anchorOffsetY="0" rotation="270" top="0" height="256" source="blade03_png"/>
-</e:Skin>
