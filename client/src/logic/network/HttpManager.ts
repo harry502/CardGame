@@ -23,10 +23,11 @@ class HttpManager
         this.request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     }
 
-    public post(url:string,params:any,obj:any)
+    public post(api:string,params:any,obj:any)
     {
         //设置为 POST 请求
-        this.request.open(url,egret.HttpMethod.POST);
+        var URL = RES.getRes("netconfig_json");
+        this.request.open(URL.http_url + api,egret.HttpMethod.POST);
         var data = "";
         for(let i in params)
         {

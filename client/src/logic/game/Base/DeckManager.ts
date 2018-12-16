@@ -15,7 +15,7 @@ class DeckManager
         var params = {};
         HttpManager.getInst().init();
         params['userid'] = Userinfo.getInst().userid;
-        HttpManager.getInst().post("http://119.29.204.43/CardGame/backend/web/index.php?r=user/getdeck",params,this);
+        HttpManager.getInst().post("user/getdeck",params,this);
     }
 
     public getDeck():number[]
@@ -79,7 +79,7 @@ class DeckManager
         HttpManager.getInst().init();
         params['userid'] = Userinfo.getInst().userid;
         params['decklist'] = liststr;
-        HttpManager.getInst().post("http://119.29.204.43/CardGame/backend/web/index.php?r=user/setdeck",params,this);
+        HttpManager.getInst().post("user/setdeck",params,this);
     }
 
     private onPostComplete(event:egret.Event):void {

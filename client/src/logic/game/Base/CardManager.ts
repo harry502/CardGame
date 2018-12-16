@@ -20,7 +20,7 @@ class CardManager
         var params = {};
         HttpManager.getInst().init();
         params['userid'] = Userinfo.getInst().userid;
-        HttpManager.getInst().post("http://119.29.204.43/CardGame/backend/web/index.php?r=user/getcard",params,this);
+        HttpManager.getInst().post("user/getcard",params,this);
     }
 
     public getList():number[]
@@ -62,7 +62,7 @@ class CardManager
         HttpManager.getInst().init();
         params['userid'] = Userinfo.getInst().userid;
         params['cardlist'] = liststr;
-        HttpManager.getInst().post("http://119.29.204.43/CardGame/backend/web/index.php?r=user/setcard",params,this);
+        HttpManager.getInst().post("user/setcard",params,this);
     }
 
     private onPostComplete(event:egret.Event):void 

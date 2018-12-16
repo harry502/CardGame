@@ -36,7 +36,7 @@ class LoginView extends core.UIView {
 			HttpManager.getInst().init();
 			params['username'] = this.account.textDisplay.text;
 			params['password'] = this.password.textDisplay.text;
-			HttpManager.getInst().post("http://119.29.204.43/CardGame/backend/web/index.php?r=user/login",params,this);
+			HttpManager.getInst().post("user/login",params,this);
 		},this);
 
 		this.zhuce.addEventListener(egret.TouchEvent.TOUCH_BEGIN,()=>{
@@ -45,7 +45,7 @@ class LoginView extends core.UIView {
 			params['username'] = this.account.textDisplay.text;
 			params['password'] = this.password.textDisplay.text;
 			params['password1'] = this.password.textDisplay.text;
-			HttpManager.getInst().post("http://119.29.204.43/CardGame/backend/web/index.php?r=user/create",params,this);
+			HttpManager.getInst().post("user/create",params,this);
 		},this);
 	}
 

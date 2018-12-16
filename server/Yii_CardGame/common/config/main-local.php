@@ -4,8 +4,8 @@ return [
 	    'db' => [
 		    'class' => 'yii\db\Connection',
 			'dsn' => 'mysql:host=0.0.0.0;port=3306;dbname=CradGame',
-		    'username' => 'cdb_outerroot',
-		    'password' => 'standno58no',
+		    'username' => '',
+		    'password' => '',
 			'charset' => 'utf8',
 	    ],
         'mailer' => [

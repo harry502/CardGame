@@ -74,7 +74,7 @@ class ShopView extends core.UIView {
         HttpManager.getInst().init();
         params['userid'] = Userinfo.getInst().userid;
 		params['cost'] = Config.CardPackCost;
-        HttpManager.getInst().post("http://119.29.204.43/CardGame/backend/web/index.php?r=user/usecoin",params,this);
+        HttpManager.getInst().post("user/usecoin",params,this);
 	}
 
 	private onPostComplete(event:egret.Event):void 
