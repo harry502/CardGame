@@ -1,0 +1,13 @@
+{
+    "rules": {
+        "no-duplicate-variable": true,
+        "semicolon": [
+            true,
+            "always"
+        ],
+        "variable-name": [
+            true,
+            "ban-keywords"
+        ]
+    }
+}

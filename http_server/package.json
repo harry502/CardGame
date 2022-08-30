@@ -1,0 +1,29 @@
+{
+  "name": "mongo_test",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.alibaba-inc.com:hgame/catcher.git"
+  },
+  "author": "harry.gyf <harry.gyf@alibaba-inc.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "npm run serve",
+    "build": "npm run build-ts",
+    "serve": "node dist/index.js",
+    "build-ts": "tsc -d"
+  },
+  "devDependencies": {
+    "@types/node": "^10.17.60",
+    "tslint": "^5.20.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "mongodb": "^4.3.1",
+    "node-fetch": "^2.5.0",
+    "typescript": "^4.5.5"
+  }
+}
