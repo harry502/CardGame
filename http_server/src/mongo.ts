@@ -21,6 +21,11 @@ export default class Mongo {
         return this.db.createCollection(tableName);
     }
 
+    public async createIndex(tableName: string, index: mongodb.IndexSpecification, unique: boolean) {
+        await this.promise;
+        return this.db.createIndex(tableName, index, {unique: unique});
+    }
+
     public async insert(tableName: string, data: any) {
         await this.promise;
         this.db.createCollection(tableName).catch((_err)=>{});;

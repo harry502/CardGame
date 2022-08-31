@@ -1,3 +1,4 @@
+
 export const mongocfg =
 {
     userTableName: "user_info",
@@ -5,3 +6,5 @@ export const mongocfg =
     dbName: "card_game",
     url: "mongodb://localhost:27017/harry",
 };
+
+export const MD5_SUFFIX = 'duiashdjhasbdlhbasyuodgasidgasuyd';
