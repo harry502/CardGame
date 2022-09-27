@@ -12,7 +12,8 @@ declare module 'express-session' {
     }
 }
 
-process.on('unhandledRejection', rej => console.warn('全局捕获Rejection', rej));
+// process.on("unhandledRejection", rej => console.warn('全局捕获Rejection', rej));
+// process.on("uncaughtException", error => console.warn('全局捕获Exception', error));
 
 let app = express();
 
