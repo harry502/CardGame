@@ -1,7 +1,7 @@
 import * as express from "express";
 import * as bodyParser from "body-parser";
-import cookieParser from "cookie-parser";
-import session from 'express-session';
+import * as cookieParser from "cookie-parser";
+import * as session from 'express-session';
 
 import { } from "./config";
 import APIRouter from "./api/api";
