@@ -1,6 +1,6 @@
-import { mongocfg, MD5_SUFFIX } from '../config';
+import { mongocfg, MD5_SUFFIX, default_card_list } from '../config';
 import MongoDb from '../mongo';
-import crypto from 'crypto'
+import * as crypto from 'crypto'
 
 type CardItem = {
     cardId: number,
@@ -14,7 +14,8 @@ export type UserInfo = {
     deckList: CardItem[],
     cardList: CardItem[],
     level: number,
-    gameNumber: number
+    gameNumber: number,
+    coins: number
 };
 
 let md5 = function (pwd) {
@@ -41,15 +42,22 @@ export default class UserManager {
         return UserManager.inst;
     }
 
-    public async UpdateUser(user: UserInfo) {
-        return this.db.update(mongocfg.userTableName, {userId: user.userId}, user);
+    public async UpdateUser(userId: string, user: any) {
+        return this.db.update(mongocfg.userTableName, {userId: userId}, user);
     }
 
     public async GetUserInfo(userId: string) {
         let findResult:UserInfo[] = await this.db.find(mongocfg.userTableName, {userId: userId});
         if(findResult.length >= 1)
         {
-            return findResult[0];
+            let ans = findResult[0];
+            return {
+                userName: ans.userName,
+                deckList: ans.deckList,
+                cardList: ans.cardList,
+                level: ans.level,
+                gameNumber: ans.gameNumber
+            };
         }
         return null;
     }
@@ -77,10 +85,11 @@ export default class UserManager {
             userId: userId,
             userPassWordMD5: md5(userPassWord + MD5_SUFFIX),
             userName: "",
-            deckList: [],
-            cardList: [],
+            deckList: default_card_list,
+            cardList: default_card_list,
             level: 1,
-            gameNumber: 0
+            gameNumber: 0,
+            coins: 500
         }
 
         return this.db.insert(mongocfg.userTableName, [user]);

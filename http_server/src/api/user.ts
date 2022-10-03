@@ -2,6 +2,7 @@ import * as express from "express";
 
 import UserManager from '../manager/user';
 import { errorCode } from "../error_code";
+import LoginedUserRouter from './logined_user';
 
 let router = express.Router();
 
@@ -28,11 +29,22 @@ router.post('/register', (req, res) => {
             });
         }
     ).catch((error) => {
-        res.send({
-            err_code: errorCode.USERID_EXISTED,
-            err_msg: "用户名已存在",
-        });
-        console.log("RegisterUser fail", error);
+        if(error.code == 11000)
+        {
+            res.send({
+                err_code: errorCode.USERID_EXISTED,
+                err_msg: "用户名已存在",
+            });
+        }
+        else
+        {
+            res.send({
+                err_code: errorCode.UNKNOW_ERROR,
+                err_msg: "未知错误",
+            });
+            console.log("RegisterUser fail", error);
+        }
+        
     })
 });
 
@@ -58,7 +70,7 @@ router.post('/login', (req, res) => {
             err_msg: "用户名或密码错误",
         });
         console.log("RegisterUser fail", error);
-    })
+    });
 });
 
 router.post('/user_info', (req, res) => {
@@ -79,7 +91,13 @@ router.post('/user_info', (req, res) => {
                     });
                 }
             }
-        );
+        ).catch((error) => {
+            res.status(500).send({
+                err_code: errorCode.UNKNOW_ERROR,
+                err_msg: "未知错误",
+            });
+            console.error(error);
+        });
     } else {
         res.status(400).send({
             err_code: errorCode.USER_NO_LOGINED,
@@ -87,5 +105,7 @@ router.post('/user_info', (req, res) => {
         });
     }
 });
+
+router.use("/", LoginedUserRouter);
 
 export default router;

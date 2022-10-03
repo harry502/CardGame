@@ -1,5 +1,7 @@
 export const errorCode =
 {
+    UNKNOW_ERROR: -1,
+    
     INVALID_USERID: 10001,
     INVALID_USERPASSWORD: 10002,
 
